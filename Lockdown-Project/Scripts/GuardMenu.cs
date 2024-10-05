@@ -13,7 +13,7 @@ public partial class GuardMenu : Node2D
 	public override void _Process(double delta)
 	{
 
-        if (Input.IsKeyPressed(Key.T))
+		if (Input.IsKeyPressed(Key.T))
 		{
 			Visible = false;
 		}
