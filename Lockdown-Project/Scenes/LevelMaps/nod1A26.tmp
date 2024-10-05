@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4sd4mw1wps0d"]
+
+[ext_resource type="PackedScene" uid="uid://dp0fjild2na6g" path="res://first_level_map.tscn" id="1_jsusi"]
+[ext_resource type="PackedScene" uid="uid://b1kg04406ifai" path="res://symmetric_level_map.tscn" id="2_2d4m7"]
+[ext_resource type="PackedScene" uid="uid://j3y8qfhrcpxk" path="res://square_level_map.tscn" id="3_a5ub8"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(225, 351)
+
+[node name="FirstLevelMap" parent="." instance=ExtResource("1_jsusi")]
+
+[node name="SymmetricLevelMap" parent="." instance=ExtResource("2_2d4m7")]
+
+[node name="SquareLevelMap" parent="." instance=ExtResource("3_a5ub8")]
