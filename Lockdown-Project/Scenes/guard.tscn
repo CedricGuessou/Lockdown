@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://vkkhqmusugj"]
+[gd_scene load_steps=10 format=3 uid="uid://vkkhqmusugj"]
 
-[ext_resource type="Script" path="res://Guard.cs" id="1_42cw3"]
+[ext_resource type="Script" path="res://Scripts/Guard.cs" id="1_8qv1g"]
 [ext_resource type="Texture2D" uid="uid://1135cqf85u24" path="res://images/mygoat.png" id="2_o2ark"]
-[ext_resource type="Script" path="res://GuardMenu.cs" id="3_iu543"]
+[ext_resource type="Script" path="res://Scripts/GuardMenu.cs" id="3_iu543"]
 
 [sub_resource type="Animation" id="Animation_1otwm"]
 length = 0.001
@@ -35,14 +35,65 @@ tracks/0/keys = {
 "values": [Vector2i(1, 0), Vector2i(2, 0), Vector2i(1, 0), Vector2i(0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_8c3ve"]
+resource_name = "WalkUp"
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0r3wh"]
+resource_name = "WalkLeft"
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(1, 2), Vector2i(2, 2), Vector2i(1, 2), Vector2i(0, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_s53hu"]
+resource_name = "WalkRight"
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(1, 2), Vector2i(2, 2), Vector2i(1, 2), Vector2i(0, 2)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a2qq8"]
 _data = {
 "RESET": SubResource("Animation_1otwm"),
-"WalkDown": SubResource("Animation_2ip86")
+"WalkDown": SubResource("Animation_2ip86"),
+"WalkLeft": SubResource("Animation_0r3wh"),
+"WalkRight": SubResource("Animation_s53hu"),
+"WalkUp": SubResource("Animation_8c3ve")
 }
 
 [node name="Guard" type="Node2D"]
-script = ExtResource("1_42cw3")
+script = ExtResource("1_8qv1g")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(188, 438)
@@ -52,7 +103,7 @@ hframes = 3
 vframes = 3
 frame = 1
 region_enabled = true
-region_rect = Rect2(-7.5, -1.5, 500.25, 714)
+region_rect = Rect2(-1.00006, -1.5, 479.6, 704.8)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -60,7 +111,6 @@ libraries = {
 }
 
 [node name="GuardMenu" type="Node2D" parent="."]
-visible = false
 script = ExtResource("3_iu543")
 
 [node name="ColorRect" type="ColorRect" parent="GuardMenu"]
@@ -71,6 +121,7 @@ offset_bottom = 409.0
 color = Color(0.366595, 0.366595, 0.366595, 1)
 
 [node name="Button2" type="Button" parent="GuardMenu/ColorRect"]
+layout_mode = 0
 offset_left = 41.0
 offset_top = 20.0
 offset_right = 239.0
@@ -78,6 +129,7 @@ offset_bottom = 60.0
 text = "Move"
 
 [node name="Button3" type="Button" parent="GuardMenu/ColorRect"]
+layout_mode = 0
 offset_left = 41.0
 offset_top = 80.0
 offset_right = 239.0
@@ -85,6 +137,7 @@ offset_bottom = 120.0
 text = "Pick up"
 
 [node name="Button4" type="Button" parent="GuardMenu/ColorRect"]
+layout_mode = 0
 offset_left = 41.0
 offset_top = 140.0
 offset_right = 239.0
@@ -93,6 +146,7 @@ text = "Drop
 "
 
 [node name="Button5" type="Button" parent="GuardMenu/ColorRect"]
+layout_mode = 0
 offset_left = 41.0
 offset_top = 200.0
 offset_right = 239.0
@@ -101,6 +155,7 @@ text = "Operate
 "
 
 [node name="Button6" type="Button" parent="GuardMenu/ColorRect"]
+layout_mode = 0
 offset_left = 41.0
 offset_top = 260.0
 offset_right = 239.0

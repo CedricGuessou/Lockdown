@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://dy6xg40bu3ekp"]
 
-[ext_resource type="PackedScene" uid="uid://vkkhqmusugj" path="res://Scenes/guard.tscn" id="1_tykde"]
+[ext_resource type="PackedScene" uid="uid://vkkhqmusugj" path="res://Scenes/guard.tscn" id="1_6hkua"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(98, 93)
 
-[node name="Guard" parent="." instance=ExtResource("1_tykde")]
+[node name="Guard" parent="." instance=ExtResource("1_6hkua")]

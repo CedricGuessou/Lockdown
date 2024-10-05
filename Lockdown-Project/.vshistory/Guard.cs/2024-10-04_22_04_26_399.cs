@@ -13,10 +13,11 @@ public partial class Guard : Node2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		GlobalPosition += new Vector2(10, 10) * (float)delta;
+		// GlobalPosition += new Vector2(10, 10) * (float)delta;
 
 		if (Input.IsKeyPressed(Key.W))
 		{
+			GetNode<AnimationPlayer>("Animation Play").Play("WalkDown");
 			GlobalPosition += new Vector2(0, -50) * (float)delta;
 		}
 
