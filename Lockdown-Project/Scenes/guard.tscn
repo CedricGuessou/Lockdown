@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://vkkhqmusugj"]
+[gd_scene load_steps=14 format=3 uid="uid://vkkhqmusugj"]
 
 [ext_resource type="Script" path="res://Scripts/Guard.cs" id="1_8qv1g"]
 [ext_resource type="Texture2D" uid="uid://1135cqf85u24" path="res://images/mygoat.png" id="2_o2ark"]
-[ext_resource type="Script" path="res://Scripts/GuardMenu.cs" id="3_iu543"]
+[ext_resource type="Script" path="res://Scripts/GuardMenu.cs" id="3_s8rga"]
+[ext_resource type="Script" path="res://Scenes/Move_Button.cs" id="4_epjei"]
+[ext_resource type="Script" path="res://Scripts/PickUp_Button.cs" id="5_j1eo7"]
 
 [sub_resource type="Animation" id="Animation_1otwm"]
 length = 0.001
@@ -92,6 +94,12 @@ _data = {
 "WalkUp": SubResource("Animation_8c3ve")
 }
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_jh1tv"]
+source_geometry_group_name = &"navigation_polygon_source_group"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bohru"]
+size = Vector2(89, 119)
+
 [node name="Guard" type="Node2D"]
 script = ExtResource("1_8qv1g")
 
@@ -111,7 +119,7 @@ libraries = {
 }
 
 [node name="GuardMenu" type="Node2D" parent="."]
-script = ExtResource("3_iu543")
+script = ExtResource("3_s8rga")
 
 [node name="ColorRect" type="ColorRect" parent="GuardMenu"]
 offset_left = 254.0
@@ -120,23 +128,26 @@ offset_right = 539.0
 offset_bottom = 409.0
 color = Color(0.366595, 0.366595, 0.366595, 1)
 
-[node name="Button2" type="Button" parent="GuardMenu/ColorRect"]
+[node name="Move_Button" type="Button" parent="GuardMenu/ColorRect"]
 layout_mode = 0
 offset_left = 41.0
 offset_top = 20.0
 offset_right = 239.0
 offset_bottom = 60.0
 text = "Move"
+script = ExtResource("4_epjei")
 
-[node name="Button3" type="Button" parent="GuardMenu/ColorRect"]
+[node name="PickUp_Button" type="Button" parent="GuardMenu/ColorRect"]
 layout_mode = 0
 offset_left = 41.0
 offset_top = 80.0
 offset_right = 239.0
 offset_bottom = 120.0
+action_mode = 0
 text = "Pick up"
+script = ExtResource("5_j1eo7")
 
-[node name="Button4" type="Button" parent="GuardMenu/ColorRect"]
+[node name="Drop_Button" type="Button" parent="GuardMenu/ColorRect"]
 layout_mode = 0
 offset_left = 41.0
 offset_top = 140.0
@@ -145,7 +156,7 @@ offset_bottom = 180.0
 text = "Drop
 "
 
-[node name="Button5" type="Button" parent="GuardMenu/ColorRect"]
+[node name="Operate_Button" type="Button" parent="GuardMenu/ColorRect"]
 layout_mode = 0
 offset_left = 41.0
 offset_top = 200.0
@@ -154,7 +165,7 @@ offset_bottom = 240.0
 text = "Operate
 "
 
-[node name="Button6" type="Button" parent="GuardMenu/ColorRect"]
+[node name="Attack_Button" type="Button" parent="GuardMenu/ColorRect"]
 layout_mode = 0
 offset_left = 41.0
 offset_top = 260.0
@@ -162,3 +173,16 @@ offset_right = 239.0
 offset_bottom = 300.0
 text = "Attack
 "
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_jh1tv")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(188.5, 425.5)
+shape = SubResource("RectangleShape2D_bohru")
+
+[connection signal="area_entered" from="Area2D" to="." method="OnCollision"]
