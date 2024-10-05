@@ -13,7 +13,7 @@ var agent: NavigationAgent2D
 
 var animPlayer: AnimationPlayer 
 
-var guardState: GuardState = GuardState.MOVE
+var guardState: GuardState = GuardState.IDLE
 
 enum GuardState
 {
@@ -37,9 +37,9 @@ func _input(event):
 		var p = NavigationServer2D.map_get_closest_point(map, event.position)
 		agent.target_position = get_global_mouse_position()
 
-func selectedF(selectedQ):
-	selected = selectedQ
-	highlight.visible = selectedQ
+func selectedF():
+	selected = true
+	highlight.visible = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):

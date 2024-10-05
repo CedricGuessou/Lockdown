@@ -17,26 +17,19 @@ public partial class Guard : CharacterBody2D
 		targetPosition = GlobalPosition;
 	}
 
-	/*
 	public override void _Input(InputEvent @event)
 	{
-		
 		if (@event is InputEventMouseButton e && !e.Pressed && e.ButtonIndex == MouseButton.Right)
 		{
 			Rid map = GetWorld2D().NavigationMap;
 			Vector2 p = NavigationServer2D.MapGetClosestPoint(map, e.Position);
 			agent.TargetPosition = e.Position;
 		}
-		
 	}
-	*/
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _PhysicsProcess(double delta)
 	{
-		Movement(delta);
-
-		/*
 		if (agent.IsNavigationFinished())
 			return;
 		
@@ -44,7 +37,6 @@ public partial class Guard : CharacterBody2D
 		Vector2 dir = diff.Normalized();
 		Velocity = dir * speed;
 		MoveAndSlide();
-		*/
 	}
 
 	public void Movement(double delta)
