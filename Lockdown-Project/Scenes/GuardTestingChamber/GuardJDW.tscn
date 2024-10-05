@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://bqcqlw8tmgtlr"]
+[gd_scene load_steps=13 format=3 uid="uid://bqcqlw8tmgtlr"]
 
 [ext_resource type="Texture2D" uid="uid://1135cqf85u24" path="res://images/mygoat.png" id="1_dmj4w"]
 [ext_resource type="Script" path="res://Scripts/GuardGD.gd" id="1_js2ro"]
 [ext_resource type="AnimationLibrary" uid="uid://c1o00502pj5lj" path="res://Animations/GuardPokemon.res" id="3_ay3rn"]
+[ext_resource type="Script" path="res://Scripts/GuardVisualGD.gd" id="3_dcomt"]
 
 [sub_resource type="Animation" id="Animation_1otwm"]
 resource_name = "RESET"
@@ -123,10 +124,11 @@ radius = 26.0768
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ugpfh"]
 size = Vector2(0, 0)
 
-[node name="GuardJdw" type="CharacterBody2D"]
+[node name="GuardJdw" type="CharacterBody2D" node_paths=PackedStringArray("highlight")]
 script = ExtResource("1_js2ro")
+highlight = NodePath("PointLight2D")
 
-[node name="GuardVisual" type="Sprite2D" parent="."]
+[node name="GuardVisual" type="Sprite2D" parent="." node_paths=PackedStringArray("guard")]
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_dmj4w")
 flip_h = true
@@ -135,6 +137,8 @@ vframes = 3
 frame = 1
 region_enabled = true
 region_rect = Rect2(-1.00006, -1.5, 479.6, 704.8)
+script = ExtResource("3_dcomt")
+guard = NodePath("..")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -154,3 +158,5 @@ visible = false
 color = Color(1, 1, 0, 1)
 texture = SubResource("PlaceholderTexture2D_ugpfh")
 texture_scale = 50.0
+
+[connection signal="clicked" from="GuardVisual" to="." method="selectedF"]
