@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Lockdown-Project",
+    "\\Lockdown-Project\\Scripts"
   ],
-  "SelectedNode": "\\C:\\Users\\guess\\Source\\Repos\\Lockdown-Repo",
+  "SelectedNode": "\\Lockdown-Project\\Scripts\\CameraController.cs",
   "PreviewInSolutionExplorer": false
 }
