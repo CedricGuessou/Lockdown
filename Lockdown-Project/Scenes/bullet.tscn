@@ -12,6 +12,7 @@ position = Vector2(-6.14, 0)
 script = ExtResource("1_qvyq6")
 
 [node name="Bullet" type="Sprite2D" parent="."]
+modulate = Color(0.0538907, 0.117968, 0.273538, 1)
 position = Vector2(8.225, 0.804998)
 scale = Vector2(0.13, 0.13)
 texture = ExtResource("1_mboif")

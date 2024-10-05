@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://bqcqlw8tmgtlr"]
 
-[ext_resource type="Script" path="res://Scripts/GuardJDW.cs" id="1_8j1n0"]
 [ext_resource type="Texture2D" uid="uid://1135cqf85u24" path="res://images/mygoat.png" id="1_dmj4w"]
+[ext_resource type="Script" path="res://Scripts/GuardGD.gd" id="1_js2ro"]
 [ext_resource type="AnimationLibrary" uid="uid://c1o00502pj5lj" path="res://Animations/GuardPokemon.res" id="3_ay3rn"]
 
 [sub_resource type="Animation" id="Animation_1otwm"]
@@ -124,7 +124,7 @@ radius = 26.0768
 size = Vector2(0, 0)
 
 [node name="GuardJdw" type="CharacterBody2D"]
-script = ExtResource("1_8j1n0")
+script = ExtResource("1_js2ro")
 
 [node name="GuardVisual" type="Sprite2D" parent="."]
 scale = Vector2(0.6, 0.6)
@@ -151,6 +151,7 @@ path_postprocessing = 1
 avoidance_enabled = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
 color = Color(1, 1, 0, 1)
 texture = SubResource("PlaceholderTexture2D_ugpfh")
 texture_scale = 50.0

@@ -8,6 +8,7 @@
 vertices = PackedVector2Array(1142, 11, 1141, 638, 5, 638, 9, 10)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 1153, 2, 1151, 648, -5, 648)])
+source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="GuardTestingEnvironment" type="Node2D"]
 script = ExtResource("2_l5hbe")
