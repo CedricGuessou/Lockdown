@@ -4,8 +4,6 @@ using System;
 public partial class Guard : Node2D
 {
 	[Export] public int stamina;
-    public Item item;
-    public Node collision;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -46,15 +44,5 @@ public partial class Guard : Node2D
             GlobalPosition += new Vector2(50, 0) * (float)delta;
             GetNode<AnimationPlayer>("AnimationPlayer").Play("WalkRight");
         }
-    }
-
-    public void Tracking()
-    {
-        
-    }
-
-    public void OnCollision(Node body)
-    {
-        collision = body;
     }
 }
