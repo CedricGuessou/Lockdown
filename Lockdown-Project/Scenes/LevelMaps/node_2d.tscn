@@ -1,14 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4sd4mw1wps0d"]
+[gd_scene load_steps=5 format=3 uid="uid://c4sd4mw1wps0d"]
 
 [ext_resource type="PackedScene" uid="uid://dp0fjild2na6g" path="res://first_level_map.tscn" id="1_jsusi"]
 [ext_resource type="PackedScene" uid="uid://b1kg04406ifai" path="res://symmetric_level_map.tscn" id="2_2d4m7"]
 [ext_resource type="PackedScene" uid="uid://j3y8qfhrcpxk" path="res://square_level_map.tscn" id="3_a5ub8"]
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_hh3oc"]
+vertices = PackedVector2Array(-315, 142, -261, 143, -1385, 144, -1365, 142, -315, -367, -204, -438, -1364, -412, -1365, -367, -419, 111, -1335, 111, -919, 69, -835, 69, -1292, 69, -461, -129, -419, -149, -346, -149, -346, -76, -419, -76, -461, -97, -461, -201, -419, -337, -461, -180, -461, -294, -461, 69, -461, -24, -461, -45, -1335, -337, -1292, -97, -616, -294, -616, -201, -648, -180, -648, -294, -835, -294, -835, -129, -919, -129, -919, -294, -1292, -294, -835, -97, -648, -45, -616, -24, -648, 69, -616, 69, -919, -97, -1292, -129)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(1, 0, 4, 5), PackedInt32Array(6, 5, 4, 7), PackedInt32Array(2, 6, 7), PackedInt32Array(2, 7, 3), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(12, 10, 9), PackedInt32Array(13, 14, 15, 16, 17, 18), PackedInt32Array(19, 20, 14, 21), PackedInt32Array(20, 19, 22), PackedInt32Array(17, 8, 23, 24), PackedInt32Array(25, 17, 24), PackedInt32Array(12, 9, 26, 27), PackedInt32Array(26, 20, 22, 28), PackedInt32Array(17, 25, 18), PackedInt32Array(14, 13, 21), PackedInt32Array(29, 19, 21, 30), PackedInt32Array(29, 30, 31, 28), PackedInt32Array(26, 28, 31), PackedInt32Array(26, 31, 32), PackedInt32Array(32, 33, 34, 35), PackedInt32Array(26, 32, 35), PackedInt32Array(26, 35, 36), PackedInt32Array(33, 13, 18, 37), PackedInt32Array(34, 33, 37), PackedInt32Array(38, 25, 24, 39), PackedInt32Array(40, 38, 39, 41), PackedInt32Array(34, 37, 11, 42), PackedInt32Array(26, 36, 43), PackedInt32Array(27, 26, 43), PackedInt32Array(27, 43, 34, 42), PackedInt32Array(10, 42, 11), PackedInt32Array(8, 11, 40), PackedInt32Array(8, 40, 41), PackedInt32Array(8, 41, 23)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-1374, -422, -1396, 155, -252, 153, -193, -449)])
+source_geometry_mode = 1
+source_geometry_group_name = &"navigation_polygon_source_group"
+
 [node name="Node2D" type="Node2D"]
 position = Vector2(225, 351)
 
-[node name="FirstLevelMap" parent="." instance=ExtResource("1_jsusi")]
+[node name="FirstLevelMap" parent="." groups=["navigation_polygon_source_group"] instance=ExtResource("1_jsusi")]
 
 [node name="SymmetricLevelMap" parent="." instance=ExtResource("2_2d4m7")]
 
 [node name="SquareLevelMap" parent="." instance=ExtResource("3_a5ub8")]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_hh3oc")
