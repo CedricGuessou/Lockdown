@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@export var stamina = 100
+
 var walkSpeed = 100
 var runSpeed = 200
 
@@ -19,17 +21,16 @@ func _ready():
 
 func _physics_process(delta):
 	var direction = Vector3()
-	
-	if ninjaCurrentAction == "WALK":
-		
-	navigationAgent.target_position = get_global_mouse_position()
-	
-	direction = navigationAgent.get_next_path_position() - global_position
+	direction = navigationAgent.get_next_path_position()
 	direction = direction.normalized()
-	
-	velocity = direction * walkSpeed
-	
-	move_and_slide()
+	if ninjaCurrentAction == "WALK":
+		velocity = direction * walkSpeed
+		move_and_slide()
+	if ninjaCurrentAction == "RUN":
+		if stamina > 0:
+			velocity = direction * runSpeed
+			stamina = stamina - 0.1
+			move_and_slide()
 	
 # Called when the node enters the scene tree for the first time.
 

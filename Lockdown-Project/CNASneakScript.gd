@@ -21,7 +21,8 @@ func enter() -> void:
 		#pick a new path to avoid the vision area
 
 func physics_update(delta: float) -> void:
-	#move down the path you picked in the enter function
+	pass
+	#NinjaScript is handling movement, the states are just setting targets
 	
 #func exit() -> void:
 	pass
