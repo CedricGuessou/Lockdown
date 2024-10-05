@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://ce0o3wwbngecj"]
+
+[ext_resource type="Texture2D" uid="uid://bswywu8dp1u2r" path="res://icon.svg" id="1_qokty"]
+[ext_resource type="Script" path="res://Scripts/CameraController.cs" id="2_l5hbe"]
+[ext_resource type="PackedScene" uid="uid://bqcqlw8tmgtlr" path="res://Scenes/GuardTestingChamber/GuardJDW.tscn" id="3_g1d4j"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_1qhsg"]
+vertices = PackedVector2Array(1142, 11, 1141, 638, 5, 638, 9, 10)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 1153, 2, 1151, 648, -5, 648)])
+
+[node name="GuardTestingEnvironment" type="Node2D"]
+script = ExtResource("2_l5hbe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2945, 1459)
+scale = Vector2(45.0534, 21.7838)
+texture = ExtResource("1_qokty")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(5, 29)
+scale = Vector2(5.16414, 4.5011)
+navigation_polygon = SubResource("NavigationPolygon_1qhsg")
+
+[node name="MainCamera" type="Camera2D" parent="."]
+position = Vector2(600, 981)
+
+[node name="GuardJdw" parent="." instance=ExtResource("3_g1d4j")]
+position = Vector2(552, 1018)

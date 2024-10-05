@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://3kiahk8hjf87"]
+
+[ext_resource type="Texture2D" uid="uid://1135cqf85u24" path="res://images/mygoat.png" id="1_oucfd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3aepj"]
+size = Vector2(141, 192)
+
+[node name="Ninja" type="CharacterBody2D" groups=["Ninja"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.0018334, 0.160914, 0.669559, 1)
+position = Vector2(967, 331.5)
+texture = ExtResource("1_oucfd")
+hframes = 3
+vframes = 3
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(967.5, 309.5)
+shape = SubResource("RectangleShape2D_3aepj")
