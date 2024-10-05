@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjjletiy18nv7"]
+
+[ext_resource type="Script" path="res://NinjaScript.gd" id="1_a3lum"]
+[ext_resource type="Script" path="res://StateMachine.gd" id="1_tm745"]
+[ext_resource type="Script" path="res://CNASneakScript.gd" id="2_iay44"]
+[ext_resource type="Texture2D" uid="uid://bswywu8dp1u2r" path="res://icon.svg" id="4_6uxia"]
+
+[node name="CyberNinja" type="CharacterBody2D"]
+script = ExtResource("1_a3lum")
+ninjaCurrentAction = null
+
+[node name="State Machine" type="Node2D" parent="."]
+script = ExtResource("1_tm745")
+
+[node name="sneak" type="Node2D" parent="State Machine"]
+script = ExtResource("2_iay44")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("4_6uxia")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_postprocessing = 1
+debug_enabled = true

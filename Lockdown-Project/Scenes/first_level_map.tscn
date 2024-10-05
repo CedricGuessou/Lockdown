@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dp0fjild2na6g"]
+[gd_scene load_steps=12 format=3 uid="uid://dp0fjild2na6g"]
 
 [ext_resource type="Texture2D" uid="uid://bp2wyegljx6jn" path="res://images/wall.png" id="1_k84fx"]
 [ext_resource type="Texture2D" uid="uid://bhc54qnf4hqaq" path="res://images/floor.png" id="2_ebxft"]
 [ext_resource type="Texture2D" uid="uid://dfxd3h0ke21yf" path="res://images/grass-menu.jpg" id="3_471n4"]
 [ext_resource type="Texture2D" uid="uid://0e41h86jb2bw" path="res://images/pngtree-wooden-door-png-image_6093732.png" id="4_cst0a"]
+[ext_resource type="PackedScene" uid="uid://bjjletiy18nv7" path="res://CyberNinjaAssassin.tscn" id="5_kajdc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s7soi"]
 texture = ExtResource("1_k84fx")
@@ -31865,8 +31866,14 @@ sources/1 = SubResource("TileSetAtlasSource_ojsrn")
 sources/2 = SubResource("TileSetAtlasSource_ct8k6")
 sources/3 = SubResource("TileSetAtlasSource_2unqh")
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_1djg0"]
+vertices = PackedVector2Array(664, 124, 804, 119, 801, 650, 667, 638, 1362, 401, 861, 401, 863, 347, 1372, 344, 27, 715, 27, 645, 115, 648, 1447, 723, 1084, 647, 1082, 474, 1375, 470, 1441, 33, 1368, 210, 1155, 119, 1157, 207)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(11, 10, 3, 2), PackedInt32Array(11, 2, 12), PackedInt32Array(12, 13, 14, 11), PackedInt32Array(15, 11, 14, 4, 7), PackedInt32Array(15, 7, 16), PackedInt32Array(17, 15, 16, 18)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(1450.77, 21.5385, 1450.77, 20.0001, 1144.62, 112.308, 1147.69, 216.923, 1358.46, 220, 1361.54, 333.846, 853.846, 338.462, 850.769, 410.769, 1353.85, 410.769, 1363.08, 460, 1072.31, 464.615, 1073.85, 636.923, 810.769, 640, 815.385, 109.231, 653.846, 115.385, 656.923, 627.692, 115.385, 638.462, 16.9231, 635.385, 18.4615, 724.615, 1458.46, 733.846)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+
 [node name="FirstLevelMap" type="TileMap"]
-position = Vector2(-1355, -357)
+position = Vector2(89, 76)
 scale = Vector2(0.65, 0.65)
 tile_set = SubResource("TileSet_qsk3g")
 format = 2
@@ -31878,3 +31885,9 @@ layer_2/name = "Vent"
 layer_2/tile_data = PackedInt32Array(1441827, 393218, 34, 1507363, 393218, 34, 1572899, 393218, 34, 1441828, 393218, 34, 1507364, 393218, 34, 1572900, 393218, 34, 1441829, 393218, 34, 1507365, 393218, 34, 1572901, 393218, 34, 131082, 393218, 34, 196618, 393218, 34, 262154, 393218, 34, 327690, 393218, 34, 131083, 393218, 34, 196619, 393218, 34, 262155, 393218, 34, 327691, 393218, 34, 131084, 393218, 34, 196620, 393218, 34, 262156, 393218, 34, 327692, 393218, 34, 131085, 393218, 34, 196621, 393218, 34, 262157, 393218, 34, 327693, 393218, 34, 2686986, 393218, 34, 2752522, 393218, 34, 2818058, 393218, 34, 2883594, 393218, 34, 2686987, 393218, 34, 2752523, 393218, 34, 2818059, 393218, 34, 2883595, 393218, 34, 2686988, 393218, 34, 2752524, 393218, 34, 2818060, 393218, 34, 2883596, 393218, 34, 2686989, 393218, 34, 2752525, 393218, 34, 2818061, 393218, 34, 2883597, 393218, 34)
 layer_3/name = "Door"
 layer_3/tile_data = PackedInt32Array(1376295, 589827, 13, 1441831, 589827, 13, 1507367, 589827, 13, 1572903, 589827, 13, 1638439, 589827, 13, 1376296, 589827, 13, 1441832, 589827, 13, 1507368, 589827, 13, 1572904, 589827, 13, 1638440, 589827, 13, 1376307, 589827, 13, 1441843, 589827, 13, 1507379, 589827, 13, 1572915, 589827, 13, 1638451, 589827, 13, 1376308, 589827, 13, 1441844, 589827, 13, 1507380, 589827, 13, 1572916, 589827, 13, 1638452, 589827, 13, 1245275, 589827, 13, 1310811, 589827, 13, 1376347, 589827, 13, 1441883, 589827, 13, 1507419, 589827, 13, 1572955, 589827, 13, 1638491, 589827, 13, 1704027, 589827, 13, 1769563, 589827, 13, 1245276, 589827, 13, 1310812, 589827, 13, 1376348, 589827, 13, 1441884, 589827, 13, 1507420, 589827, 13, 1572956, 589827, 13, 1638492, 589827, 13, 1704028, 589827, 13, 1769564, 589827, 13)
+
+[node name="Node2D" parent="." instance=ExtResource("5_kajdc")]
+position = Vector2(1387.69, 126.154)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_1djg0")
