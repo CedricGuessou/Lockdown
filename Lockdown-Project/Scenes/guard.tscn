@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://1135cqf85u24" path="res://images/mygoat.png" id="2_o2ark"]
 [ext_resource type="AnimationLibrary" uid="uid://c1o00502pj5lj" path="res://Animations/GuardPokemon.res" id="3_loey7"]
 [ext_resource type="Script" path="res://Scripts/GuardMenu.cs" id="3_s8rga"]
-[ext_resource type="Script" path="res://Scenes/Move_Button.cs" id="4_epjei"]
+[ext_resource type="Script" path="res://Scripts/Move_Button.cs" id="4_epjei"]
 [ext_resource type="Script" path="res://Scripts/PickUp_Button.cs" id="5_j1eo7"]
 
 [sub_resource type="Animation" id="Animation_1otwm"]
