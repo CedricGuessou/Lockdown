@@ -11,9 +11,36 @@ config_version=5
 [application]
 
 config/name="Lockdown-Project"
-config/features=PackedStringArray("4.2", "Forward Plus")
+config/features=PackedStringArray("4.2", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
 [dotnet]
 
 project/assembly_name="Lockdown-Project"
+
+[input]
+
+camera_move_up={
+"deadzone": 0.5,
+"events": []
+}
+camera_move_down={
+"deadzone": 0.5,
+"events": []
+}
+camera_move_left={
+"deadzone": 0.5,
+"events": []
+}
+camera_move_right={
+"deadzone": 0.5,
+"events": []
+}
+camera_zoom_in={
+"deadzone": 0.5,
+"events": []
+}
+camera_zoom_out={
+"deadzone": 0.5,
+"events": []
+}
