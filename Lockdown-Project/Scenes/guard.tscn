@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://vkkhqmusugj"]
+[gd_scene load_steps=7 format=3 uid="uid://iali83iwkggv"]
 
 [ext_resource type="Script" path="res://Scripts/Guard.cs" id="1_8qv1g"]
 [ext_resource type="Texture2D" uid="uid://1135cqf85u24" path="res://images/mygoat.png" id="2_o2ark"]
