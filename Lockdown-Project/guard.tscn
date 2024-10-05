@@ -1,0 +1,109 @@
+[gd_scene load_steps=7 format=3 uid="uid://vkkhqmusugj"]
+
+[ext_resource type="Script" path="res://Guard.cs" id="1_42cw3"]
+[ext_resource type="Texture2D" uid="uid://1135cqf85u24" path="res://images/mygoat.png" id="2_o2ark"]
+[ext_resource type="Script" path="res://GuardMenu.cs" id="3_iu543"]
+
+[sub_resource type="Animation" id="Animation_1otwm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2ip86"]
+resource_name = "WalkDown"
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(1, 0), Vector2i(2, 0), Vector2i(1, 0), Vector2i(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a2qq8"]
+_data = {
+"RESET": SubResource("Animation_1otwm"),
+"WalkDown": SubResource("Animation_2ip86")
+}
+
+[node name="Guard" type="Node2D"]
+script = ExtResource("1_42cw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(188, 438)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_o2ark")
+hframes = 3
+vframes = 3
+frame = 1
+region_enabled = true
+region_rect = Rect2(-7.5, -1.5, 500.25, 714)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_a2qq8")
+}
+
+[node name="GuardMenu" type="Node2D" parent="."]
+visible = false
+script = ExtResource("3_iu543")
+
+[node name="ColorRect" type="ColorRect" parent="GuardMenu"]
+offset_left = 254.0
+offset_top = 85.0
+offset_right = 539.0
+offset_bottom = 409.0
+color = Color(0.366595, 0.366595, 0.366595, 1)
+
+[node name="Button2" type="Button" parent="GuardMenu/ColorRect"]
+offset_left = 41.0
+offset_top = 20.0
+offset_right = 239.0
+offset_bottom = 60.0
+text = "Move"
+
+[node name="Button3" type="Button" parent="GuardMenu/ColorRect"]
+offset_left = 41.0
+offset_top = 80.0
+offset_right = 239.0
+offset_bottom = 120.0
+text = "Pick up"
+
+[node name="Button4" type="Button" parent="GuardMenu/ColorRect"]
+offset_left = 41.0
+offset_top = 140.0
+offset_right = 239.0
+offset_bottom = 180.0
+text = "Drop
+"
+
+[node name="Button5" type="Button" parent="GuardMenu/ColorRect"]
+offset_left = 41.0
+offset_top = 200.0
+offset_right = 239.0
+offset_bottom = 240.0
+text = "Operate
+"
+
+[node name="Button6" type="Button" parent="GuardMenu/ColorRect"]
+offset_left = 41.0
+offset_top = 260.0
+offset_right = 239.0
+offset_bottom = 300.0
+text = "Attack
+"
