@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2g8c6qr46ui7"]
+
+[ext_resource type="Texture2D" uid="uid://d0fm7cryvasr" path="res://images/camera.jpg" id="1_rvm7g"]
+
+[node name="Camera" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(554, 372)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_rvm7g")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(419, 229)
+polygon = PackedVector2Array(68, 131, -41, -70, -266, 46)

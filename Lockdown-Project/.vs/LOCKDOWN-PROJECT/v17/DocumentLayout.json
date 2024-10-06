@@ -3,6 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\guess\\source\\repos\\Lockdown-Repo\\Lockdown-Project\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Profiles\\jsd3713\\source\\repos\\Lockdown-Repo\\Lockdown-Project\\Scripts\\GuardGD.gd||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scripts\\GuardGD.gd||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Profiles\\jsd3713\\source\\repos\\Lockdown-Repo\\Lockdown-Project\\Scripts\\GuardJDW.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scripts\\GuardJDW.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
       "AbsoluteMoniker": "D:0:0:{A94A5E2F-0A19-4717-8B54-4762BCCEE7EC}|Lockdown-Project.csproj|c:\\users\\guess\\source\\repos\\lockdown-repo\\lockdown-project\\scripts\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A94A5E2F-0A19-4717-8B54-4762BCCEE7EC}|Lockdown-Project.csproj|solutionrelative:scripts\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -55,6 +61,17 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "GuardGD.gd",
+              "DocumentMoniker": "D:\\Profiles\\jsd3713\\source\\repos\\Lockdown-Repo\\Lockdown-Project\\Scripts\\GuardGD.gd",
+              "RelativeDocumentMoniker": "Scripts\\GuardGD.gd",
+              "ToolTip": "D:\\Profiles\\jsd3713\\source\\repos\\Lockdown-Repo\\Lockdown-Project\\Scripts\\GuardGD.gd",
+              "RelativeToolTip": "Scripts\\GuardGD.gd",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-10-05T22:17:12.404Z",
+              "EditorCaption": ""
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "CameraController.cs",
               "DocumentMoniker": "C:\\Users\\guess\\source\\repos\\Lockdown-Repo\\Lockdown-Project\\Scripts\\CameraController.cs",
               "RelativeDocumentMoniker": "Scripts\\CameraController.cs",
@@ -67,6 +84,13 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GuardVisual.cs",
+              "DocumentMoniker": "D:\\Profiles\\jsd3713\\source\\repos\\Lockdown-Repo\\Lockdown-Project\\Scripts\\GuardVisual.cs",
+              "RelativeDocumentMoniker": "Scripts\\GuardVisual.cs",
+              "ToolTip": "D:\\Profiles\\jsd3713\\source\\repos\\Lockdown-Repo\\Lockdown-Project\\Scripts\\GuardVisual.cs",
+              "RelativeToolTip": "Scripts\\GuardVisual.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
               "DocumentIndex": 1,
               "Title": "AlertButton.cs",
               "DocumentMoniker": "C:\\Users\\guess\\source\\repos\\Lockdown-Repo\\Lockdown-Project\\Scripts\\AlertButton.cs",
@@ -101,24 +125,27 @@
               "RelativeToolTip": "Scripts\\Move_Button.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T20:07:56.211Z"
               "WhenOpened": "2024-10-06T01:24:40.434Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
               "DocumentIndex": 5,
               "Title": "GuardJDW.cs",
               "DocumentMoniker": "C:\\Users\\guess\\source\\repos\\Lockdown-Repo\\Lockdown-Project\\Scripts\\GuardJDW.cs",
               "RelativeDocumentMoniker": "Scripts\\GuardJDW.cs",
               "ToolTip": "C:\\Users\\guess\\source\\repos\\Lockdown-Repo\\Lockdown-Project\\Scripts\\GuardJDW.cs",
               "RelativeToolTip": "Scripts\\GuardJDW.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAkAAAA",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-05T14:26:04.586Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-05T14:26:04.586Z"
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
               "DocumentIndex": 4,
               "Title": "Guard.cs",
               "DocumentMoniker": "C:\\Users\\guess\\source\\repos\\Lockdown-Repo\\Lockdown-Project\\Scripts\\Guard.cs",
@@ -127,17 +154,29 @@
               "RelativeToolTip": "Scripts\\Guard.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAQwAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-05T13:46:43.749Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-05T13:46:43.749Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "GuardMenu.cs",
               "DocumentMoniker": "C:\\Users\\guess\\source\\repos\\Lockdown-Repo\\Lockdown-Project\\Scripts\\GuardMenu.cs",
               "RelativeDocumentMoniker": "Scripts\\GuardMenu.cs",
               "ToolTip": "C:\\Users\\guess\\source\\repos\\Lockdown-Repo\\Lockdown-Project\\Scripts\\GuardMenu.cs",
               "RelativeToolTip": "Scripts\\GuardMenu.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T13:15:48.005Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CameraController.cs",
+              "DocumentMoniker": "D:\\Profiles\\jsd3713\\source\\repos\\Lockdown-Repo\\Lockdown-Project\\Scripts\\CameraController.cs",
+              "RelativeDocumentMoniker": "Scripts\\CameraController.cs",
+              "ToolTip": "D:\\Profiles\\jsd3713\\source\\repos\\Lockdown-Repo\\Lockdown-Project\\Scripts\\CameraController.cs",
+              "RelativeToolTip": "Scripts\\CameraController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-05T13:15:48.005Z",

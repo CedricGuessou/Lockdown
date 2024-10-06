@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ce0o3wwbngecj"]
+[gd_scene load_steps=5 format=3 uid="uid://ce0o3wwbngecj"]
 
 [ext_resource type="Texture2D" uid="uid://bswywu8dp1u2r" path="res://icon.svg" id="1_qokty"]
 [ext_resource type="Script" path="res://Scripts/CameraController.cs" id="2_l5hbe"]
@@ -9,10 +9,6 @@ vertices = PackedVector2Array(1142, 11, 1141, 638, 5, 638, 9, 10)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 1153, 2, 1151, 648, -5, 648)])
 source_geometry_group_name = &"navigation_polygon_source_group"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ri5b5"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ijyv6"]
 
 [node name="GuardTestingEnvironment" type="Node2D"]
 script = ExtResource("2_l5hbe")
@@ -33,31 +29,4 @@ position = Vector2(600, 981)
 [node name="GuardJdw" parent="." instance=ExtResource("3_g1d4j")]
 position = Vector2(518, 1052)
 
-[node name="GuardJdw2" parent="." instance=ExtResource("3_g1d4j")]
-position = Vector2(518, 1206)
-
-[node name="CNATEST" type="CharacterBody2D" parent="." groups=["Ninja"]]
-position = Vector2(871, 1469)
-
-[node name="Sprite2D" type="Sprite2D" parent="CNATEST"]
-scale = Vector2(0.458519, 0.461986)
-texture = ExtResource("1_qokty")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CNATEST"]
-scale = Vector2(2.9723, 2.83426)
-shape = SubResource("RectangleShape2D_ri5b5")
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(725, 1352)
-scale = Vector2(0.5216, 13.1337)
-texture = ExtResource("1_qokty")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2/StaticBody2D"]
-scale = Vector2(6.20595, 6.36723)
-shape = SubResource("RectangleShape2D_ijyv6")
-
 [editable path="GuardJdw"]
-[editable path="GuardJdw2"]
