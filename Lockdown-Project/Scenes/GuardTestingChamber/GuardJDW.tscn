@@ -1,7 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://bqcqlw8tmgtlr"]
+[gd_scene load_steps=15 format=3 uid="uid://bqcqlw8tmgtlr"]
 
-[ext_resource type="Script" path="res://Scripts/GuardJDW.cs" id="1_8j1n0"]
 [ext_resource type="Texture2D" uid="uid://1135cqf85u24" path="res://images/mygoat.png" id="1_dmj4w"]
+[ext_resource type="Script" path="res://Scripts/GuardGD.gd" id="1_pprko"]
 [ext_resource type="AnimationLibrary" uid="uid://c1o00502pj5lj" path="res://Animations/GuardPokemon.res" id="3_ay3rn"]
 
 [sub_resource type="Animation" id="Animation_1otwm"]
@@ -117,14 +117,37 @@ _data = {
 "WalkUp": SubResource("Animation_8c3ve")
 }
 
+[sub_resource type="Animation" id="Animation_tmq1s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:texture_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.01]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2nwp4"]
+_data = {
+"RESET": SubResource("Animation_tmq1s")
+}
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_ry81l"]
 radius = 26.0768
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ugpfh"]
 size = Vector2(0, 0)
 
-[node name="GuardJdw" type="CharacterBody2D"]
-script = ExtResource("1_8j1n0")
+[sub_resource type="ImageTexture" id="ImageTexture_6ajc1"]
+
+[node name="GuardJdw" type="CharacterBody2D" node_paths=PackedStringArray("highlight") groups=["Guards"]]
+script = ExtResource("1_pprko")
+highlight = NodePath("PointLight2D")
 
 [node name="GuardVisual" type="Sprite2D" parent="."]
 scale = Vector2(0.6, 0.6)
@@ -132,13 +155,19 @@ texture = ExtResource("1_dmj4w")
 flip_h = true
 hframes = 3
 vframes = 3
-frame = 7
+frame = 1
 region_enabled = true
 region_rect = Rect2(-1.00006, -1.5, 479.6, 704.8)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_a2qq8"),
+"GuardPokemon": ExtResource("3_ay3rn")
+}
+
+[node name="HighlightPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2nwp4"),
 "GuardPokemon": ExtResource("3_ay3rn")
 }
 
@@ -151,6 +180,21 @@ path_postprocessing = 1
 avoidance_enabled = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
 color = Color(1, 1, 0, 1)
 texture = SubResource("PlaceholderTexture2D_ugpfh")
-texture_scale = 50.0
+texture_scale = 0.01
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(0, 0, 0, 0)
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -35.0
+offset_top = -39.0
+offset_right = -27.0
+offset_bottom = -31.0
+scale = Vector2(8.52445, 13.1179)
+icon = SubResource("ImageTexture_6ajc1")
+flat = true
+
+[connection signal="button_down" from="Button" to="." method="selectedF"]
