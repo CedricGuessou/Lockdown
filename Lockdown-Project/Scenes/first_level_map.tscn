@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bhc54qnf4hqaq" path="res://images/floor.png" id="2_ebxft"]
 [ext_resource type="Texture2D" uid="uid://dfxd3h0ke21yf" path="res://images/grass-menu.jpg" id="3_471n4"]
 [ext_resource type="Texture2D" uid="uid://0e41h86jb2bw" path="res://images/pngtree-wooden-door-png-image_6093732.png" id="4_cst0a"]
-[ext_resource type="PackedScene" uid="uid://bjjletiy18nv7" path="res://CyberNinjaAssassin.tscn" id="5_kajdc"]
+[ext_resource type="PackedScene" uid="uid://bjjletiy18nv7" path="res://Scenes/CyberNinjaAssassin.tscn" id="5_kajdc"]
 [ext_resource type="PackedScene" uid="uid://vkkhqmusugj" path="res://Scenes/guard.tscn" id="6_03mfq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s7soi"]

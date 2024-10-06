@@ -402,10 +402,13 @@ size = Vector2(0, 0)
 
 [sub_resource type="ImageTexture" id="ImageTexture_6ajc1"]
 
-[node name="GuardJdw" type="CharacterBody2D" node_paths=PackedStringArray("highlight", "rayCast", "line2d") groups=["Guards"]]
+[node name="GuardJdw" type="CharacterBody2D" node_paths=PackedStringArray("highlight", "rayCastTL", "rayCastTR", "rayCastBL", "rayCastBR", "line2d") groups=["Guards"]]
 script = ExtResource("1_wh412")
 highlight = NodePath("PointLight2D")
-rayCast = NodePath("RayCast2D")
+rayCastTL = NodePath("RayCastTL")
+rayCastTR = NodePath("RayCastTR")
+rayCastBL = NodePath("RayCastBL")
+rayCastBR = NodePath("RayCastBR")
 line2d = NodePath("Line2D")
 
 [node name="GuardVisual" type="Sprite2D" parent="."]
@@ -419,9 +422,6 @@ vframes = 4
 frame = 2
 region_enabled = true
 region_rect = Rect2(-1.55585, -7.13914, 9997.68, 8023.17)
-
-[node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2(-4, -146)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -465,5 +465,17 @@ icon = SubResource("ImageTexture_6ajc1")
 flat = true
 
 [node name="Line2D" type="Line2D" parent="."]
+
+[node name="RayCastTL" type="RayCast2D" parent="."]
+position = Vector2(-32, -158)
+
+[node name="RayCastTR" type="RayCast2D" parent="."]
+position = Vector2(40, -159)
+
+[node name="RayCastBL" type="RayCast2D" parent="."]
+position = Vector2(-33, -1)
+
+[node name="RayCastBR" type="RayCast2D" parent="."]
+position = Vector2(41, -1)
 
 [connection signal="button_down" from="Button" to="." method="selectedF"]
