@@ -15,13 +15,15 @@ func _ready():
 		if child is State:
 			states[child.name.to_lower()] = child
 			child.transition.connect(switch_state)
-			
+	
+	
+	initialState = states["sneak"]
 	#Enter the initial state you're supposed to be in
 	if initialState:
 		initialState.enter()
 		currentState = initialState
 
-## Update the State on the proscess tick	
+## Update the State on the process tick	
 func _process(delta):
 	if currentState:
 		currentState.update(delta)	
@@ -44,6 +46,7 @@ func switch_state(state, newStateName):
 		currentState.exit()
 	
 	newState.enter()
+	currentState = newState
 
 ## The current state of the state machine.
 ##@onready var state: State = (func get_initial_state() -> State:

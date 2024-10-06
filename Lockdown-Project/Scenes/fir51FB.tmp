@@ -1,11 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://dp0fjild2na6g"]
+[gd_scene load_steps=12 format=3 uid="uid://dp0fjild2na6g"]
 
 [ext_resource type="Texture2D" uid="uid://bp2wyegljx6jn" path="res://images/wall.png" id="1_k84fx"]
 [ext_resource type="Texture2D" uid="uid://bhc54qnf4hqaq" path="res://images/floor.png" id="2_ebxft"]
 [ext_resource type="Texture2D" uid="uid://dfxd3h0ke21yf" path="res://images/grass-menu.jpg" id="3_471n4"]
 [ext_resource type="Texture2D" uid="uid://0e41h86jb2bw" path="res://images/pngtree-wooden-door-png-image_6093732.png" id="4_cst0a"]
 [ext_resource type="PackedScene" uid="uid://bjjletiy18nv7" path="res://CyberNinjaAssassin.tscn" id="5_kajdc"]
-[ext_resource type="PackedScene" uid="uid://vkkhqmusugj" path="res://Scenes/guard.tscn" id="6_03mfq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s7soi"]
 texture = ExtResource("1_k84fx")
@@ -31868,9 +31867,9 @@ sources/2 = SubResource("TileSetAtlasSource_ct8k6")
 sources/3 = SubResource("TileSetAtlasSource_2unqh")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_1djg0"]
-vertices = PackedVector2Array(1426, 38, 1441, 33, 1447, 723, 1375, 470, 1362, 401, 1372, 344, 861, 401, 863, 347, 1370, 283, 27, 715, 27, 645, 115, 648, 667, 638, 801, 650, 23, 104, 21, 21, 1423, 21, 664, 107, 1079, 276, 1086, 110, 1084, 647, 1082, 474, 804, 108, 1074, 110)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(4, 6, 7, 5), PackedInt32Array(0, 5, 8), PackedInt32Array(9, 10, 11, 2), PackedInt32Array(2, 11, 12, 13), PackedInt32Array(14, 15, 16, 17), PackedInt32Array(0, 8, 18, 19, 16), PackedInt32Array(20, 21, 3, 2), PackedInt32Array(17, 16, 19, 22), PackedInt32Array(13, 20, 2), PackedInt32Array(22, 13, 12, 17), PackedInt32Array(22, 19, 23)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(1450.77, 21.5385, 1450.77, 20.0001, 1144.62, 112.308, 1147.69, 216.923, 1358.46, 220, 1361.54, 333.846, 853.846, 338.462, 850.769, 410.769, 1353.85, 410.769, 1363.08, 460, 1072.31, 464.615, 1073.85, 636.923, 810.769, 640, 815.385, 109.231, 653.846, 115.385, 656.923, 627.692, 115.385, 638.462, 16.9231, 635.385, 18.4615, 724.615, 1458.46, 733.846), PackedVector2Array(1432.31, 12.3077, 10.7692, 10.7693, 13.8461, 113.846, 1074.24, 119.517, 1452.31, 121.539), PackedVector2Array(1076.92, 109.231, 1069.23, 286.154, 1383.08, 293.846, 1381.54, 212.308, 1156.92, 207.692, 1155.38, 106.154)])
+vertices = PackedVector2Array(664, 124, 804, 119, 801, 650, 667, 638, 1362, 401, 861, 401, 863, 347, 1372, 344, 27, 715, 27, 645, 115, 648, 1447, 723, 1084, 647, 1082, 474, 1375, 470, 1441, 33, 1368, 210, 1155, 119, 1157, 207)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(11, 10, 3, 2), PackedInt32Array(11, 2, 12), PackedInt32Array(12, 13, 14, 11), PackedInt32Array(15, 11, 14, 4, 7), PackedInt32Array(15, 7, 16), PackedInt32Array(17, 15, 16, 18)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(1450.77, 21.5385, 1450.77, 20.0001, 1144.62, 112.308, 1147.69, 216.923, 1358.46, 220, 1361.54, 333.846, 853.846, 338.462, 850.769, 410.769, 1353.85, 410.769, 1363.08, 460, 1072.31, 464.615, 1073.85, 636.923, 810.769, 640, 815.385, 109.231, 653.846, 115.385, 656.923, 627.692, 115.385, 638.462, 16.9231, 635.385, 18.4615, 724.615, 1458.46, 733.846)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="FirstLevelMap" type="TileMap"]
@@ -31892,6 +31891,3 @@ position = Vector2(1387.69, 126.154)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_1djg0")
-
-[node name="Guard" parent="." instance=ExtResource("6_03mfq")]
-position = Vector2(730.231, 201)
