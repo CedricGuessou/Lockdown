@@ -1,32 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://bjjletiy18nv7"]
 
-[ext_resource type="Script" path="res://Scripts/NinjaScript.gd" id="1_a3lum"]
-[ext_resource type="Script" path="res://Scripts/StateMachine.gd" id="1_tm745"]
-[ext_resource type="Script" path="res://Scripts/CNASneakScript.gd" id="2_iay44"]
-[ext_resource type="Texture2D" uid="uid://bswywu8dp1u2r" path="res://icon.svg" id="4_6uxia"]
-[ext_resource type="Script" path="res://NinjaScript.gd" id="1_a3lum"]
-[ext_resource type="Script" path="res://StateMachine.gd" id="1_tm745"]
-[ext_resource type="Script" path="res://CNASneakScript.gd" id="2_iay44"]
+[ext_resource type="Texture2D" uid="uid://ck2o6e4cy7nfo" path="res://images/Ninja_Full.png" id="2_4v3cs"]
 [ext_resource type="Script" path="res://CNAFightScript.gd" id="4_eku8a"]
-[ext_resource type="Texture2D" uid="uid://dmnlx2e6m0nfk" path="res://images/ninja_sprite.png" id="5_1ejna"]
-
-[sub_resource type="Animation" id="Animation_wf313"]
-resource_name = "CNA_Walk_Side"
-length = 1.45
-loop_mode = 1
-step = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0), Vector2i(6, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_2kr8b"]
 length = 0.001
@@ -43,9 +18,132 @@ tracks/0/keys = {
 "values": [Vector2i(2, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_wf313"]
+resource_name = "CNA_Walk_Right"
+length = 1.45
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(3, 0), Vector2i(5, 0), Vector2i(3, 1), Vector2i(4, 1), Vector2i(3, 2), Vector2i(4, 2), Vector2i(5, 2), Vector2i(4, 3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_0341m"]
+resource_name = "CNA_Walk_Up"
+length = 1.2
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(2, 0), Vector2i(0, 1), Vector2i(1, 1), Vector2i(0, 2), Vector2i(1, 2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_6pikq"]
+resource_name = "CNA_Walk_Down"
+length = 1.2
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 3), Vector2i(2, 3), Vector2i(0, 4), Vector2i(1, 4), Vector2i(0, 5), Vector2i(1, 5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_kh7kw"]
+resource_name = "CNA_Walk_Left"
+length = 1.45
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(3, 0), Vector2i(5, 0), Vector2i(3, 1), Vector2i(4, 1), Vector2i(3, 2), Vector2i(4, 2), Vector2i(5, 2), Vector2i(4, 3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rb4j2"]
 _data = {
-"CNA_Walk_Side": SubResource("Animation_wf313"),
+"CNA_Walk_Down": SubResource("Animation_6pikq"),
+"CNA_Walk_Left": SubResource("Animation_kh7kw"),
+"CNA_Walk_Right": SubResource("Animation_wf313"),
+"CNA_Walk_Up": SubResource("Animation_0341m"),
 "RESET": SubResource("Animation_2kr8b")
 }
 
@@ -55,22 +153,21 @@ height = 71.0
 
 [node name="CyberNinja" type="CharacterBody2D"]
 position = Vector2(1, -29)
-script = ExtResource("1_a3lum")
 
 [node name="State Machine" type="Node2D" parent="."]
-script = ExtResource("1_tm745")
 
 [node name="sneak" type="Node2D" parent="State Machine"]
-script = ExtResource("2_iay44")
 
 [node name="fight" type="Node2D" parent="State Machine"]
 script = ExtResource("4_eku8a")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.05, 0.05)
-texture = ExtResource("5_1ejna")
-hframes = 7
+texture = ExtResource("2_4v3cs")
+hframes = 6
+vframes = 6
 frame = 2
+region_rect = Rect2(167.15, 16.2662, 13010, 11789.9)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_postprocessing = 1

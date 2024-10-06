@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bswywu8dp1u2r" path="res://icon.svg" id="1_qokty"]
 [ext_resource type="Script" path="res://Scripts/CameraController.cs" id="2_l5hbe"]
-[ext_resource type="PackedScene" uid="uid://bqcqlw8tmgtlr" path="res://Scenes/GuardTestingChamber/GuardJDW.tscn" id="3_g1d4j"]
+[ext_resource type="PackedScene" uid="uid://bqcqlw8tmgtlr" path="res://Scenes/GuardTestingChamber/GuardJDW1.tscn" id="3_g1d4j"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_1qhsg"]
 vertices = PackedVector2Array(1142, 11, 1141, 638, 5, 638, 9, 10)

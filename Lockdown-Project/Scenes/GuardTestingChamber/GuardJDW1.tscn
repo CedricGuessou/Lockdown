@@ -1,0 +1,392 @@
+[gd_scene load_steps=23 format=3 uid="uid://bqcqlw8tmgtlr"]
+
+[ext_resource type="Script" path="res://Scripts/GuardGD.gd" id="1_pprko"]
+[ext_resource type="Texture2D" uid="uid://dee2uu1kv5pvp" path="res://images/Guard1.png" id="2_2cb3s"]
+[ext_resource type="AnimationLibrary" uid="uid://c1o00502pj5lj" path="res://Animations/GuardPokemon.res" id="3_ay3rn"]
+
+[sub_resource type="Animation" id="Animation_1otwm"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GuardVisual:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PointLight2D:texture_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [50.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GuardVisual:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_2ip86"]
+resource_name = "WalkDown"
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(1, 0), Vector2i(2, 0), Vector2i(1, 0), Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0r3wh"]
+resource_name = "WalkLeft"
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(1, 2), Vector2i(2, 2), Vector2i(1, 2), Vector2i(0, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_s53hu"]
+resource_name = "WalkRight"
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(1, 2), Vector2i(2, 2), Vector2i(1, 2), Vector2i(0, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_8c3ve"]
+resource_name = "WalkUp"
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a2qq8"]
+_data = {
+"RESET": SubResource("Animation_1otwm"),
+"WalkDown": SubResource("Animation_2ip86"),
+"WalkLeft": SubResource("Animation_0r3wh"),
+"WalkRight": SubResource("Animation_s53hu"),
+"WalkUp": SubResource("Animation_8c3ve")
+}
+
+[sub_resource type="Animation" id="Animation_xpa3y"]
+resource_name = "WalkDown"
+length = 1.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GuardVisual:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15, 16, 17, 16, 15, 14]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GuardVisual:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_oh0gq"]
+resource_name = "WalkUp"
+length = 0.9
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GuardVisual:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [6, 7, 8, 9, 10]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GuardVisual:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.8),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_6tjmq"]
+resource_name = "WalkLeft"
+length = 1.6
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GuardVisual:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 3, 2, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GuardVisual:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_mdjs6"]
+resource_name = "WalkRight"
+length = 1.6
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GuardVisual:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 3, 2, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GuardVisual:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wt0pf"]
+_data = {
+"WalkDown": SubResource("Animation_xpa3y"),
+"WalkLeft": SubResource("Animation_6tjmq"),
+"WalkRight": SubResource("Animation_mdjs6"),
+"WalkUp": SubResource("Animation_oh0gq")
+}
+
+[sub_resource type="Animation" id="Animation_b7jcv"]
+resource_name = "WalkUp"
+length = 0.9
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GuardVisual:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [13, 14, 15, 16, 17]
+}
+
+[sub_resource type="Animation" id="Animation_fbkdo"]
+resource_name = "WalkDown"
+length = 1.8
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GuardVisual:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4, 5, 6, 5, 4, 3, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6ruf2"]
+_data = {
+"WalkDown": SubResource("Animation_fbkdo"),
+"WalkUp": SubResource("Animation_b7jcv")
+}
+
+[sub_resource type="Animation" id="Animation_tmq1s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:texture_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.01]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2nwp4"]
+_data = {
+"RESET": SubResource("Animation_tmq1s")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yb4qp"]
+radius = 36.0
+height = 174.0
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ugpfh"]
+size = Vector2(0, 0)
+
+[sub_resource type="ImageTexture" id="ImageTexture_6ajc1"]
+
+[node name="GuardJdw1" type="CharacterBody2D" node_paths=PackedStringArray("highlight", "rayCast", "line2d") groups=["Guards"]]
+script = ExtResource("1_pprko")
+highlight = NodePath("PointLight2D")
+rayCast = NodePath("RayCast2D")
+line2d = NodePath("Line2D")
+
+[node name="GuardVisual" type="Sprite2D" parent="."]
+position = Vector2(-92, -181)
+scale = Vector2(0.1, 0.102)
+texture = ExtResource("2_2cb3s")
+centered = false
+flip_h = true
+hframes = 5
+vframes = 4
+frame = 1
+region_enabled = true
+region_rect = Rect2(-1.55585, -7.13914, 9997.68, 8023.17)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_a2qq8"),
+"Guard1": SubResource("AnimationLibrary_wt0pf"),
+"Guard2": SubResource("AnimationLibrary_6ruf2"),
+"GuardPokemon": ExtResource("3_ay3rn")
+}
+
+[node name="HighlightPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2nwp4"),
+"GuardPokemon": ExtResource("3_ay3rn")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, -77)
+shape = SubResource("CapsuleShape2D_yb4qp")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_postprocessing = 1
+avoidance_enabled = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+color = Color(1, 1, 0, 1)
+texture = SubResource("PlaceholderTexture2D_ugpfh")
+texture_scale = 0.01
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(0, 0, 0, 0)
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -35.0
+offset_top = -39.0
+offset_right = -27.0
+offset_bottom = -31.0
+scale = Vector2(8.52445, 13.1179)
+icon = SubResource("ImageTexture_6ajc1")
+flat = true
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+
+[node name="Line2D" type="Line2D" parent="."]
+
+[connection signal="button_down" from="Button" to="." method="selectedF"]
