@@ -16,7 +16,10 @@ var agent: NavigationAgent2D
 var animPlayer: AnimationPlayer 
 var highlightPlayer: AnimationPlayer 
 
-@export var rayCast : RayCast2D
+@export var rayCastTL : RayCast2D
+@export var rayCastTR : RayCast2D
+@export var rayCastBL : RayCast2D
+@export var rayCastBR : RayCast2D
 @export var line2d : Line2D
 
 var guardState: GuardState = GuardState.IDLE
@@ -40,7 +43,10 @@ func _ready():
 	targetPosition = global_position
 	var guards = get_tree().get_nodes_in_group("Guards")
 	for guard in guards:
-		rayCast.add_exception(guard)
+		rayCastTL.add_exception(guard)
+		rayCastTR.add_exception(guard)
+		rayCastBL.add_exception(guard)
+		rayCastBR.add_exception(guard)
 
 func _input(event):
 	if (event is InputEventMouseButton && !event.pressed && event.button_index == MOUSE_BUTTON_RIGHT):
@@ -65,20 +71,41 @@ func selectedF():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	rayCast.target_position = Vector2(CNA.global_position.x - global_position.x, CNA.global_position.y - global_position.y)
+	
+	# Top Left Rayast
+	rayCastTL.target_position = Vector2(CNA.global_position.x - global_position.x, CNA.global_position.y - global_position.y)
 	print(str(CNA.global_position))
-	if rayCast.is_colliding():
-		print("My name is: " + name + " Is colliding with: " + str(rayCast.get_collider().name) + " at " + str(rayCast.get_collision_point()))
-		if rayCast.get_collider().is_in_group("Ninja"):
-			print("LESSS GOOOO")
+	if rayCastTL.is_colliding():
+		if rayCastTL.get_collider().is_in_group("Ninja"):
+			ninjaSpotted.emit()
+	
+	# Top Right Rayast
+	rayCastTR.target_position = Vector2(CNA.global_position.x - global_position.x, CNA.global_position.y - global_position.y)
+	print(str(CNA.global_position))
+	if rayCastTR.is_colliding():
+		if rayCastTR.get_collider().is_in_group("Ninja"):
+			ninjaSpotted.emit()
+	
+	# Bottom Left Rayast
+	rayCastBL.target_position = Vector2(CNA.global_position.x - global_position.x, CNA.global_position.y - global_position.y)
+	print(str(CNA.global_position))
+	if rayCastBL.is_colliding():
+		if rayCastBL.get_collider().is_in_group("Ninja"):
+			ninjaSpotted.emit()
+	
+	# Bottom Right Rayast
+	rayCastBR.target_position = Vector2(CNA.global_position.x - global_position.x, CNA.global_position.y - global_position.y)
+	print(str(CNA.global_position))
+	if rayCastBR.is_colliding():
+		if rayCastBR.get_collider().is_in_group("Ninja"):
 			ninjaSpotted.emit()
 	
 	#RAYCAST LINE TIME
 	line2d.clear_points()
 	line2d.points.clear()
 	line2d.show()
-	line2d.add_point(rayCast.position)
-	line2d.add_point(rayCast.target_position)
+	line2d.add_point(rayCastTL.position)
+	line2d.add_point(rayCastTL.target_position)
 	
 	if (guardState == GuardState.MOVE):
 		if (agent.is_navigation_finished()):
