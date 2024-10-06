@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://bynt6whjvcg8"]
+
+[ext_resource type="Script" path="res://Scripts/CameraController.cs" id="1_wosxh"]
+[ext_resource type="Texture2D" uid="uid://bswywu8dp1u2r" path="res://icon.svg" id="2_7hmit"]
+[ext_resource type="PackedScene" uid="uid://bb8aoubugd4mk" path="res://Scenes/GuardTestingChamber/GuardJDWMarker.tscn" id="3_y82ir"]
+[ext_resource type="Script" path="res://Scripts/AlertButton.cs" id="4_yjesc"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_1qhsg"]
+vertices = PackedVector2Array(1142, 11, 1141, 638, 5, 638, 9, 10)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 1153, 2, 1151, 648, -5, 648)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+
+[node name="GuardTestingEnvironment" type="Node2D"]
+script = ExtResource("1_wosxh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2945, 1459)
+scale = Vector2(45.0534, 21.7838)
+texture = ExtResource("2_7hmit")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(5, 29)
+scale = Vector2(5.16414, 4.5011)
+navigation_polygon = SubResource("NavigationPolygon_1qhsg")
+
+[node name="MainCamera" type="Camera2D" parent="."]
+position = Vector2(600, 981)
+
+[node name="GuardJdw" parent="." instance=ExtResource("3_y82ir")]
+position = Vector2(553, 1018)
+
+[node name="AlertButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 483.0
+offset_top = 798.0
+offset_right = 623.0
+offset_bottom = 938.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(70, 140)
+theme_override_font_sizes/font_size = 30
+text = "ALERT"
+script = ExtResource("4_yjesc")
+
+[connection signal="pressed" from="AlertButton" to="AlertButton" method="_on_pressed"]

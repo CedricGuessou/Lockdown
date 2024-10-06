@@ -3,21 +3,18 @@ using System;
 
 public partial class GuardJDW : CharacterBody2D
 {
-	[Export] public int staminari;
-	
-
 	[Export] public int stamina;
+	public Item item;
 	[Export] public PointLight2D highlight;
 	public Node collision;
 	private Vector2 targetPosition;
 	private float speed = 300f;
-	private bool selected = false;
 
 	private NavigationAgent2D agent;
 
 	private AnimationPlayer animPlayer;
 
-	GuardState guardState = GuardState.IDLE;
+	GuardState guardState = GuardState.MOVE;
 
 	private enum GuardState
 	{
@@ -44,12 +41,6 @@ public partial class GuardJDW : CharacterBody2D
 			Vector2 p = NavigationServer2D.MapGetClosestPoint(map, e.Position);
 			agent.TargetPosition = GetGlobalMousePosition();
 		}
-	}
-
-	void Selected(bool selectedQ)
-	{
-		selected = selectedQ;
-		highlight.Visible = selectedQ;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
