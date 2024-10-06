@@ -420,6 +420,9 @@ frame = 2
 region_enabled = true
 region_rect = Rect2(-1.55585, -7.13914, 9997.68, 8023.17)
 
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(-4, -146)
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_a2qq8"),
@@ -445,6 +448,7 @@ avoidance_enabled = true
 [node name="PointLight2D" type="PointLight2D" parent="."]
 visible = false
 modulate = Color(1, 1, 1, 0)
+position = Vector2(-5, -110)
 color = Color(1, 1, 0, 1)
 texture = SubResource("PlaceholderTexture2D_ugpfh")
 texture_scale = 0.01
@@ -453,14 +457,12 @@ texture_scale = 0.01
 modulate = Color(0, 0, 0, 0)
 self_modulate = Color(1, 1, 1, 0)
 offset_left = -35.0
-offset_top = -39.0
+offset_top = -155.0
 offset_right = -27.0
-offset_bottom = -31.0
+offset_bottom = -143.0
 scale = Vector2(8.52445, 13.1179)
 icon = SubResource("ImageTexture_6ajc1")
 flat = true
-
-[node name="RayCast2D" type="RayCast2D" parent="."]
 
 [node name="Line2D" type="Line2D" parent="."]
 

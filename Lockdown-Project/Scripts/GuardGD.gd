@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var CNA: CharacterBody2D = get_tree().get_first_node_in_group("Ninja")
+@onready var CNA: StaticBody2D = get_tree().get_first_node_in_group("Ninja")
 
 @export var staminari: int = 1
 @export var stamina: int
@@ -38,6 +38,9 @@ func _ready():
 	highlightPlayer = get_node("HighlightPlayer")
 	agent = get_node("NavigationAgent2D")
 	targetPosition = global_position
+	var guards = get_tree().get_nodes_in_group("Guards")
+	for guard in guards:
+		rayCast.add_exception(guard)
 
 func _input(event):
 	if (event is InputEventMouseButton && !event.pressed && event.button_index == MOUSE_BUTTON_RIGHT):
@@ -62,14 +65,16 @@ func selectedF():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	rayCast.target_position = CNA.global_position
+	rayCast.target_position = Vector2(CNA.global_position.x - global_position.x, CNA.global_position.y - global_position.y)
 	print(str(CNA.global_position))
 	if rayCast.is_colliding():
+		print("My name is: " + name + " Is colliding with: " + str(rayCast.get_collider().name) + " at " + str(rayCast.get_collision_point()))
 		if rayCast.get_collider().is_in_group("Ninja"):
 			print("LESSS GOOOO")
 			ninjaSpotted.emit()
 	
 	#RAYCAST LINE TIME
+	line2d.clear_points()
 	line2d.points.clear()
 	line2d.show()
 	line2d.add_point(rayCast.position)

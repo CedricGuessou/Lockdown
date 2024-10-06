@@ -33,31 +33,26 @@ position = Vector2(600, 981)
 [node name="GuardJdw" parent="." instance=ExtResource("3_g1d4j")]
 position = Vector2(518, 1052)
 
-[node name="GuardJdw2" parent="." instance=ExtResource("3_g1d4j")]
-position = Vector2(518, 1206)
-
-[node name="CNATEST" type="CharacterBody2D" parent="." groups=["Ninja"]]
+[node name="CNATEST" type="StaticBody2D" parent="." groups=["Ninja"]]
 position = Vector2(871, 1469)
 
 [node name="Sprite2D" type="Sprite2D" parent="CNATEST"]
 scale = Vector2(0.458519, 0.461986)
 texture = ExtResource("1_qokty")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CNATEST"]
+[node name="CNACOLLISION" type="CollisionShape2D" parent="CNATEST"]
 scale = Vector2(2.9723, 2.83426)
 shape = SubResource("RectangleShape2D_ri5b5")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(725, 1352)
 scale = Vector2(0.5216, 13.1337)
 texture = ExtResource("1_qokty")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D2"]
+[node name="IAMTHESTATICBODU" type="StaticBody2D" parent="Sprite2D2"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2/IAMTHESTATICBODU"]
 scale = Vector2(6.20595, 6.36723)
 shape = SubResource("RectangleShape2D_ijyv6")
 
 [editable path="GuardJdw"]
-[editable path="GuardJdw2"]

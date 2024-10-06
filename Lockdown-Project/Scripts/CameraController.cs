@@ -43,18 +43,18 @@ public partial class CameraController : Node2D
 		{
 			zoomVec.X *= zoomInScale;
 			zoomVec.Y *= zoomInScale;
-            label.Scale = Vector2.One / _cam.Zoom;
-        }
+			label.Scale = Vector2.One / _cam.Zoom;
+		}
 
-        // Zoom out
-        if (Input.IsActionJustPressed("camera_zoom_out"))
+		// Zoom out
+		if (Input.IsActionJustPressed("camera_zoom_out"))
 		{
 			zoomVec.X *= zoomOutScale;
 			zoomVec.Y *= zoomOutScale;
 			label.Scale = Vector2.One / _cam.Zoom;
 		}
 
-        _cam.Zoom =_cam.Zoom.Slerp(zoomVec, slerpSpeed * (float)delta); // Slerps zoom (just a smoothing thing, delta is there for consistency)
+		_cam.Zoom =_cam.Zoom.Slerp(zoomVec, slerpSpeed * (float)delta); // Slerps zoom (just a smoothing thing, delta is there for consistency)
 	}
 
 	/// <summary>
@@ -119,19 +119,19 @@ public partial class CameraController : Node2D
 
 	void SlowMo()
 	{
-        if (Input.IsActionJustReleased("SlowMo") && Engine.TimeScale == 1)
-        {
-            Engine.TimeScale = 0.3;
+		if (Input.IsActionJustReleased("SlowMo") && Engine.TimeScale == 1)
+		{
+			Engine.TimeScale = 0.3;
 			GD.Print("slow");
 			
-        }
-        else if(Input.IsActionJustReleased("SlowMo"))
-        {
-            Engine.TimeScale = 1;
+		}
+		else if(Input.IsActionJustReleased("SlowMo"))
+		{
+			Engine.TimeScale = 1;
 			GD.Print("Normal");
-        }
+		}
 
-    }
+	}
 
 
 }
