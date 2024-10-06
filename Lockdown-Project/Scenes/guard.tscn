@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://vkkhqmusugj"]
 
-[ext_resource type="Script" path="res://guard.gd" id="1_j45sy"]
+[ext_resource type="Script" path="res://Scripts/guard.gd" id="1_j45sy"]
 [ext_resource type="Texture2D" uid="uid://1135cqf85u24" path="res://images/mygoat.png" id="2_o2ark"]
 [ext_resource type="AnimationLibrary" uid="uid://c1o00502pj5lj" path="res://Animations/GuardPokemon.res" id="3_loey7"]
 [ext_resource type="Script" path="res://Scripts/GuardMenu.cs" id="3_s8rga"]

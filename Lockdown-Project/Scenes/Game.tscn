@@ -4,18 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://8nocgiux76d0" path="res://Scenes/item.tscn" id="2_fvc08"]
 [ext_resource type="PackedScene" uid="uid://3kiahk8hjf87" path="res://Scenes/ninja.tscn" id="3_jrw2l"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gnwb8"]
-bg_color = Color(1, 0.192157, 0.196078, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0fygs"]
-bg_color = Color(1, 0, 0.0627451, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bkwwy"]
-bg_color = Color(0.932625, 0.932625, 0.932625, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d1o4s"]
-bg_color = Color(0.460995, 0.460995, 0.460995, 1)
-
 [node name="Node2D" type="Node2D"]
 position = Vector2(98, 93)
 
