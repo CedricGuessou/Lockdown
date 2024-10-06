@@ -26,9 +26,10 @@ sources/5 = SubResource("TileSetAtlasSource_qbwkf")
 sources/6 = SubResource("TileSetAtlasSource_t2frx")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_iski4"]
-vertices = PackedVector2Array(5214, 2464, 28, 2442, 44, 28, 5212, 28)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+vertices = PackedVector2Array(4813, 2428, 63, 2428, 2183, 2130, 2693, 2130, 361, 2130, 4515, 1123, 4813, 1017, 5184, 1017, 5184, 1474, 4813, 1474, 4515, 1368, 4515, 2130, 4515, 1739, 4515, 1547, 63, 63, 361, 1368, 4515, 752, 4813, 63, 4515, 944, 4515, 361, 3806, 361, 3806, 752, 3561, 944, 3561, 361, 2693, 361, 2693, 1123, 2183, 1123, 2183, 361, 361, 361, 2693, 1368, 3561, 1547, 3806, 1739, 3561, 2130, 3806, 2130, 2183, 1368, 361, 1123)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 2, 1), PackedInt32Array(5, 6, 7, 8, 9, 10), PackedInt32Array(9, 0, 11, 12), PackedInt32Array(13, 9, 12), PackedInt32Array(4, 1, 14, 15), PackedInt32Array(16, 17, 6, 18), PackedInt32Array(17, 16, 19), PackedInt32Array(14, 17, 19, 20), PackedInt32Array(6, 5, 18), PackedInt32Array(9, 13, 10), PackedInt32Array(21, 16, 18, 22), PackedInt32Array(21, 22, 23, 20), PackedInt32Array(14, 20, 23), PackedInt32Array(14, 23, 24), PackedInt32Array(24, 25, 26, 27), PackedInt32Array(14, 24, 27), PackedInt32Array(14, 27, 28), PackedInt32Array(25, 5, 10, 29), PackedInt32Array(26, 25, 29), PackedInt32Array(30, 13, 12, 31), PackedInt32Array(32, 30, 31, 33), PackedInt32Array(26, 29, 3, 34), PackedInt32Array(14, 28, 35), PackedInt32Array(15, 14, 35), PackedInt32Array(15, 35, 26, 34), PackedInt32Array(2, 34, 3), PackedInt32Array(0, 3, 32), PackedInt32Array(0, 32, 33), PackedInt32Array(0, 33, 11)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(33.8461, 18.4615, 18.4614, 2452.31, 5224.62, 2475.38, 5221.54, 18.4615)])
+source_geometry_mode = 1
 source_geometry_group_name = &"navi"
 
 [node name="FirstLevelMap" type="TileMap" groups=["navi"]]
