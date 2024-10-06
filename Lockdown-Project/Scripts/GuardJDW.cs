@@ -4,7 +4,11 @@ using System;
 public partial class GuardJDW : CharacterBody2D
 {
 	[Export] public int stamina;
+<<<<<<< HEAD
 	// public Item item;
+=======
+	//public Item item;
+>>>>>>> ca5ad9407c15a6b93f296805898550be03c1efa7
 	[Export] public PointLight2D highlight;
 	public Node collision;
 	private Vector2 targetPosition;
