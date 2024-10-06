@@ -131,3 +131,8 @@ func _physics_process(delta):
 	
 	if (guardState == GuardState.ATTACK):
 		pass
+
+func die():
+	visible = false
+	get_node("CollisionShape2D").queue_free()
+	get_node("GuardVisual").queue_free()

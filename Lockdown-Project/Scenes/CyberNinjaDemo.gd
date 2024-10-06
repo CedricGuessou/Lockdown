@@ -10,6 +10,7 @@ var speed: float = 300
 @export var point4 : Node2D
 @export var point5 : Node2D
 
+var attacking : bool = false
 var goingTo : int = 1
 
 func _ready():
@@ -39,17 +40,22 @@ func _physics_process(delta):
 	velocity = dir * speed
 
 	# Animation Section
-	if (velocity.y > 70 && velocity.y > velocity.x):
+	if (velocity.y > 70 && velocity.y > velocity.x && !attacking):
 		animPlayer.play("CNA_Walk_Down")
 		
-	elif (velocity.y < -70 && velocity.y < velocity.x):
+	elif (velocity.y < -70 && velocity.y < velocity.x && !attacking):
 		animPlayer.play("CNA_Walk_Up")
 	
-	elif (velocity.x > 0):
+	elif (velocity.x > 0 && !attacking):
 		animPlayer.play("CNA_Walk_Right")
 	
-	else:
+	elif (!attacking):
 		animPlayer.play("CNA_Walk_Left")
 
 	move_and_slide()
 	
+func swipe():
+	attacking = true
+	animPlayer.play("CNA_Attack")
+	await get_tree().create_timer(1.0).timeout
+	attacking = false

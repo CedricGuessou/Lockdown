@@ -46,5 +46,21 @@ offset_right = 0.016983
 offset_bottom = -1.52588e-05
 text = "Quit"
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(6.4026, 5.22963)
+text = "CYBER NINJA ASSASSIN"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 217.0
+offset_top = 169.0
+offset_right = 394.0
+offset_bottom = 192.0
+scale = Vector2(6.4026, 5.22963)
+text = "FULLSCREEN!"
+
 [connection signal="pressed" from="Panel/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Panel/Quit" to="." method="_on_quit_pressed"]
