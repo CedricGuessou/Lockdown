@@ -27,5 +27,5 @@ extends CharacterBody2D
 #
 	#move_and_slide()
 	
-	func animation:
+	#func animation:
 		

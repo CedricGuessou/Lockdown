@@ -4,7 +4,6 @@ using System;
 public partial class Guard : CharacterBody2D
 {
 	[Export] public int stamina;
-	public Item item;
 	public Node collision;
 	private Vector2 targetPosition;
 	private float speed = 30f;

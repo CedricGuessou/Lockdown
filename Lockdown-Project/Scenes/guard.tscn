@@ -1,12 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://vkkhqmusugj"]
+[gd_scene load_steps=13 format=3 uid="uid://vkkhqmusugj"]
 
-[ext_resource type="Script" path="res://Scripts/Guard.cs" id="1_8qv1g"]
+[ext_resource type="Script" path="res://guard.gd" id="1_j45sy"]
 [ext_resource type="Texture2D" uid="uid://1135cqf85u24" path="res://images/mygoat.png" id="2_o2ark"]
 [ext_resource type="AnimationLibrary" uid="uid://c1o00502pj5lj" path="res://Animations/GuardPokemon.res" id="3_loey7"]
 [ext_resource type="Script" path="res://Scripts/GuardMenu.cs" id="3_s8rga"]
-[ext_resource type="Script" path="res://Scripts/Move_Button.cs" id="5_emd88"]
-[ext_resource type="Script" path="res://Scripts/PickUp_Button.cs" id="5_j1eo7"]
-[ext_resource type="Script" path="res://Scripts/Shooting_test.gd" id="7_rv5xj"]
 
 [sub_resource type="Animation" id="Animation_1otwm"]
 resource_name = "RESET"
@@ -118,11 +115,13 @@ source_geometry_group_name = &"navigation_polygon_source_group"
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bohru"]
 size = Vector2(89, 119)
 
-[node name="Guard" type="CharacterBody2D"]
-script = ExtResource("1_8qv1g")
+[node name="Guard" type="CharacterBody2D" node_paths=PackedStringArray("marker2D") groups=["Guard"]]
+position = Vector2(1, 1)
+script = ExtResource("1_j45sy")
+marker2D = NodePath("Marker2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(188, 438)
+position = Vector2(3, 21)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_o2ark")
 hframes = 3
@@ -155,7 +154,6 @@ offset_top = 20.0
 offset_right = 239.0
 offset_bottom = 60.0
 text = "Move"
-script = ExtResource("5_emd88")
 
 [node name="PickUp_Button" type="Button" parent="GuardMenu/ColorRect"]
 layout_mode = 0
@@ -165,7 +163,6 @@ offset_right = 239.0
 offset_bottom = 120.0
 action_mode = 0
 text = "Pick up"
-script = ExtResource("5_j1eo7")
 
 [node name="Drop_Button" type="Button" parent="GuardMenu/ColorRect"]
 layout_mode = 0
@@ -201,17 +198,13 @@ navigation_polygon = SubResource("NavigationPolygon_jh1tv")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-185, -417)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(188.5, 425.5)
+position = Vector2(3.5, 8.5)
 shape = SubResource("RectangleShape2D_bohru")
 
-[node name="Shooting_test" type="Node2D" parent="." node_paths=PackedStringArray("bulletNode", "marker_2d")]
-script = ExtResource("7_rv5xj")
-bulletNode = NodePath(".")
-marker_2d = NodePath("Marker2D")
-
-[node name="Marker2D" type="Marker2D" parent="Shooting_test"]
-position = Vector2(260, 407)
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(70, 12)
 
 [connection signal="area_entered" from="Area2D" to="." method="OnCollision"]

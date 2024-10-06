@@ -1,3 +1,22 @@
-[gd_scene format=3 uid="uid://8nocgiux76d0"]
+[gd_scene load_steps=4 format=3 uid="uid://8nocgiux76d0"]
 
-[node name="Item" type="Node2D"]
+[ext_resource type="Script" path="res://Scripts/item.gd" id="1_yypc0"]
+[ext_resource type="Texture2D" uid="uid://dpinsj1qj0pte" path="res://images/landmine.png" id="2_n55qy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1m6ud"]
+size = Vector2(31, 10)
+
+[node name="Landmine" type="Area2D"]
+position = Vector2(-3, 1)
+script = ExtResource("1_yypc0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4, -10)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("2_n55qy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_1m6ud")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

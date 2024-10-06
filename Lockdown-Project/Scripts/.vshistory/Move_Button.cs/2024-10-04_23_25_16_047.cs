@@ -1,30 +1,24 @@
 using Godot;
 using System;
 
-public partial class PickUp_Button : Button
+public partial class Move_Button : Button
 {
-	Guard guard = new Guard();
+	[Export] public Guard guard;
+	public NavigationAgent2D nav;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		guard = GetNode<Guard>("../../../");
+		nav = GetNode<NavigationAgent2D>("NavigationAgent2D");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		/*
-		if((guard.collision is Item) == false)
+		if (Input.IsMouseButtonPressed(MouseButton.Left))
 		{
-			Disabled = true;
+			nav.TargetPosition = GetGlobalMousePosition();
 		}
-		else
-		{
-			if (ButtonPressed)
-			{
-				guard.item = (Item)guard.collision;
-			}
-		}
-		*/
+
 	}
 }

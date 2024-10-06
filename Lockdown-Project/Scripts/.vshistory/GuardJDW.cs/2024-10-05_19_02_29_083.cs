@@ -8,6 +8,7 @@ public partial class GuardJDW : CharacterBody2D
 
 	[Export] public int stamina;
 	[Export] public PointLight2D highlight;
+	public Item item;
 	public Node collision;
 	private Vector2 targetPosition;
 	private float speed = 300f;
