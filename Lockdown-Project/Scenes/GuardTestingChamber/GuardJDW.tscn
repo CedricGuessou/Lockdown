@@ -145,9 +145,11 @@ size = Vector2(0, 0)
 
 [sub_resource type="ImageTexture" id="ImageTexture_6ajc1"]
 
-[node name="GuardJdw" type="CharacterBody2D" node_paths=PackedStringArray("highlight") groups=["Guards"]]
+[node name="GuardJdw" type="CharacterBody2D" node_paths=PackedStringArray("highlight", "rayCast", "line2d") groups=["Guards"]]
 script = ExtResource("1_pprko")
 highlight = NodePath("PointLight2D")
+rayCast = NodePath("RayCast2D")
+line2d = NodePath("Line2D")
 
 [node name="GuardVisual" type="Sprite2D" parent="."]
 scale = Vector2(0.6, 0.6)
@@ -196,5 +198,9 @@ offset_bottom = -31.0
 scale = Vector2(8.52445, 13.1179)
 icon = SubResource("ImageTexture_6ajc1")
 flat = true
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+
+[node name="Line2D" type="Line2D" parent="."]
 
 [connection signal="button_down" from="Button" to="." method="selectedF"]

@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var CNA: CharacterBody2D = get_tree().get_first_node_in_group("Ninja")
+
 @export var staminari: int = 1
 @export var stamina: int
 @export var highlight: PointLight2D 
@@ -14,7 +16,12 @@ var agent: NavigationAgent2D
 var animPlayer: AnimationPlayer 
 var highlightPlayer: AnimationPlayer 
 
+@export var rayCast : RayCast2D
+@export var line2d : Line2D
+
 var guardState: GuardState = GuardState.IDLE
+
+signal ninjaSpotted
 
 enum GuardState
 {
@@ -55,6 +62,19 @@ func selectedF():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	rayCast.target_position = CNA.global_position
+	print(str(CNA.global_position))
+	if rayCast.is_colliding():
+		if rayCast.get_collider().is_in_group("Ninja"):
+			print("LESSS GOOOO")
+			ninjaSpotted.emit()
+	
+	#RAYCAST LINE TIME
+	line2d.points.clear()
+	line2d.show()
+	line2d.add_point(rayCast.position)
+	line2d.add_point(rayCast.target_position)
+	
 	if (guardState == GuardState.MOVE):
 		if (agent.is_navigation_finished()):
 			animPlayer.play("GuardPokemon/RESET")
