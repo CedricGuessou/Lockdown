@@ -1,9 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dp0fjild2na6g"]
+[gd_scene load_steps=10 format=3 uid="uid://dp0fjild2na6g"]
 
-[ext_resource type="Texture2D" uid="uid://bp2wyegljx6jn" path="res://images/wall.png" id="1_k84fx"]
-[ext_resource type="Texture2D" uid="uid://bhc54qnf4hqaq" path="res://images/floor.png" id="2_ebxft"]
-[ext_resource type="Texture2D" uid="uid://dfxd3h0ke21yf" path="res://images/grass-menu.jpg" id="3_471n4"]
-[ext_resource type="Texture2D" uid="uid://0e41h86jb2bw" path="res://images/pngtree-wooden-door-png-image_6093732.png" id="4_cst0a"]
+[ext_resource type="Texture2D" uid="uid://dqhlougvfj6yp" path="res://wall.png" id="1_k84fx"]
+[ext_resource type="Texture2D" uid="uid://dabq1blp8sem7" path="res://floor.png" id="2_ebxft"]
+[ext_resource type="Texture2D" uid="uid://c57p1uvrs43pe" path="res://grass-menu.jpg" id="3_471n4"]
+[ext_resource type="Texture2D" uid="uid://co13b1hf4rfib" path="res://pngtree-wooden-door-png-image_6093732.png" id="4_cst0a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s7soi"]
 texture = ExtResource("1_k84fx")
@@ -31865,14 +31865,7 @@ sources/1 = SubResource("TileSetAtlasSource_ojsrn")
 sources/2 = SubResource("TileSetAtlasSource_ct8k6")
 sources/3 = SubResource("TileSetAtlasSource_2unqh")
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_ularx"]
-vertices = PackedVector2Array(1446, 726, 26, 726, 666, 650, 806, 650, 102, 650, 1370, 346, 1446, 314, 1558, 314, 1558, 438, 1446, 438, 1370, 406, 1370, 234, 1446, 26, 1370, 278, 1370, 102, 1370, 650, 1370, 518, 1370, 474, 26, 26, 102, 406, 1142, 102, 1142, 234, 1082, 278, 1082, 102, 806, 102, 806, 346, 666, 346, 666, 102, 102, 102, 806, 406, 1082, 474, 1142, 518, 1082, 650, 1142, 650, 666, 406, 102, 346)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 2, 1), PackedInt32Array(5, 6, 7, 8, 9, 10), PackedInt32Array(11, 12, 6, 13), PackedInt32Array(12, 11, 14), PackedInt32Array(9, 0, 15, 16), PackedInt32Array(17, 9, 16), PackedInt32Array(4, 1, 18, 19), PackedInt32Array(18, 12, 14, 20), PackedInt32Array(9, 17, 10), PackedInt32Array(6, 5, 13), PackedInt32Array(21, 11, 13, 22), PackedInt32Array(21, 22, 23, 20), PackedInt32Array(18, 20, 23), PackedInt32Array(18, 23, 24), PackedInt32Array(24, 25, 26, 27), PackedInt32Array(18, 24, 27), PackedInt32Array(18, 27, 28), PackedInt32Array(25, 5, 10, 29), PackedInt32Array(26, 25, 29), PackedInt32Array(30, 17, 16, 31), PackedInt32Array(32, 30, 31, 33), PackedInt32Array(26, 29, 3, 34), PackedInt32Array(18, 28, 35), PackedInt32Array(19, 18, 35), PackedInt32Array(19, 35, 26, 34), PackedInt32Array(2, 34, 3), PackedInt32Array(0, 3, 32), PackedInt32Array(0, 32, 33), PackedInt32Array(0, 33, 15)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(1.53833, 7.69232, 1572.31, 13.8462, 1575.38, 747.692, 9.23071, 749.231)])
-source_geometry_mode = 1
-source_geometry_group_name = &"navigation_polygon_source_group"
-
-[node name="FirstLevelMap" type="TileMap" groups=["navigation_polygon_source_group"]]
+[node name="FirstLevelMap" type="TileMap"]
 position = Vector2(-1353, -357)
 scale = Vector2(0.65, 0.65)
 tile_set = SubResource("TileSet_qsk3g")
@@ -31886,6 +31879,3 @@ layer_2/name = "Vent"
 layer_2/tile_data = PackedInt32Array(1441827, 393218, 34, 1507363, 393218, 34, 1572899, 393218, 34, 1441828, 393218, 34, 1507364, 393218, 34, 1572900, 393218, 34, 1441829, 393218, 34, 1507365, 393218, 34, 1572901, 393218, 34, 131082, 393218, 34, 196618, 393218, 34, 262154, 393218, 34, 327690, 393218, 34, 131083, 393218, 34, 196619, 393218, 34, 262155, 393218, 34, 327691, 393218, 34, 131084, 393218, 34, 196620, 393218, 34, 262156, 393218, 34, 327692, 393218, 34, 131085, 393218, 34, 196621, 393218, 34, 262157, 393218, 34, 327693, 393218, 34, 2686986, 393218, 34, 2752522, 393218, 34, 2818058, 393218, 34, 2883594, 393218, 34, 2686987, 393218, 34, 2752523, 393218, 34, 2818059, 393218, 34, 2883595, 393218, 34, 2686988, 393218, 34, 2752524, 393218, 34, 2818060, 393218, 34, 2883596, 393218, 34, 2686989, 393218, 34, 2752525, 393218, 34, 2818061, 393218, 34, 2883597, 393218, 34)
 layer_3/name = "Door"
 layer_3/tile_data = PackedInt32Array(1376295, 589827, 13, 1441831, 589827, 13, 1507367, 589827, 13, 1572903, 589827, 13, 1638439, 589827, 13, 1376296, 589827, 13, 1441832, 589827, 13, 1507368, 589827, 13, 1572904, 589827, 13, 1638440, 589827, 13, 1376307, 589827, 13, 1441843, 589827, 13, 1507379, 589827, 13, 1572915, 589827, 13, 1638451, 589827, 13, 1376308, 589827, 13, 1441844, 589827, 13, 1507380, 589827, 13, 1572916, 589827, 13, 1638452, 589827, 13, 1245275, 589827, 13, 1310811, 589827, 13, 1376347, 589827, 13, 1441883, 589827, 13, 1507419, 589827, 13, 1572955, 589827, 13, 1638491, 589827, 13, 1704027, 589827, 13, 1769563, 589827, 13, 1245276, 589827, 13, 1310812, 589827, 13, 1376348, 589827, 13, 1441884, 589827, 13, 1507420, 589827, 13, 1572956, 589827, 13, 1638492, 589827, 13, 1704028, 589827, 13, 1769564, 589827, 13)
-
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-navigation_polygon = SubResource("NavigationPolygon_ularx")

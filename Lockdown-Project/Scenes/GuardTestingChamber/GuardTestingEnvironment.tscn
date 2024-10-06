@@ -33,7 +33,7 @@ position = Vector2(600, 981)
 [node name="GuardJdw" parent="." instance=ExtResource("3_g1d4j")]
 position = Vector2(518, 1052)
 
-[node name="CNATEST" type="StaticBody2D" parent="." groups=["Ninja"]]
+[node name="CNATEST" type="CharacterBody2D" parent="." groups=["Ninja"]]
 position = Vector2(871, 1469)
 
 [node name="Sprite2D" type="Sprite2D" parent="CNATEST"]

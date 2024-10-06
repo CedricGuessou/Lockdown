@@ -10,7 +10,7 @@ var distance : Vector2
 func enter() -> void:
 	get_node("../../").goalReached.connect(goal_reached)
 	#replace the mouse position with a function to locate the position of the nearest guard
-	for guard in get_tree().get_nodes_in_group("Guard"):
+	for guard in get_tree().get_nodes_in_group("Guards"):
 		guardsList.append(guard)
 	distance = abs(get_node("../../").global_position - guardsList[0].global_position)
 	target = guardsList[0]

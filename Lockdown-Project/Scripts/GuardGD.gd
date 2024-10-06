@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var CNA: StaticBody2D = get_tree().get_first_node_in_group("Ninja")
+@onready var CNA: CharacterBody2D = get_tree().get_first_node_in_group("Ninja")
 
 @export var staminari: int = 1
 @export var stamina: int
@@ -71,41 +71,39 @@ func selectedF():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	
-	# Top Left Rayast
-	rayCastTL.target_position = Vector2(CNA.global_position.x - global_position.x, CNA.global_position.y - global_position.y)
-	print(str(CNA.global_position))
-	if rayCastTL.is_colliding():
-		if rayCastTL.get_collider().is_in_group("Ninja"):
-			ninjaSpotted.emit()
-	
-	# Top Right Rayast
-	rayCastTR.target_position = Vector2(CNA.global_position.x - global_position.x, CNA.global_position.y - global_position.y)
-	print(str(CNA.global_position))
-	if rayCastTR.is_colliding():
-		if rayCastTR.get_collider().is_in_group("Ninja"):
-			ninjaSpotted.emit()
-	
-	# Bottom Left Rayast
-	rayCastBL.target_position = Vector2(CNA.global_position.x - global_position.x, CNA.global_position.y - global_position.y)
-	print(str(CNA.global_position))
-	if rayCastBL.is_colliding():
-		if rayCastBL.get_collider().is_in_group("Ninja"):
-			ninjaSpotted.emit()
-	
-	# Bottom Right Rayast
-	rayCastBR.target_position = Vector2(CNA.global_position.x - global_position.x, CNA.global_position.y - global_position.y)
-	print(str(CNA.global_position))
-	if rayCastBR.is_colliding():
-		if rayCastBR.get_collider().is_in_group("Ninja"):
-			ninjaSpotted.emit()
-	
-	#RAYCAST LINE TIME
-	line2d.clear_points()
-	line2d.points.clear()
-	line2d.show()
-	line2d.add_point(rayCastTL.position)
-	line2d.add_point(rayCastTL.target_position)
+	print(name + " " + str(guardState))
+	if CNA:
+		# Top Left Rayast
+		rayCastTL.target_position = Vector2(CNA.global_position.x - global_position.x, CNA.global_position.y - global_position.y)
+		print(str(CNA.global_position))
+		if rayCastTL.is_colliding():
+			if rayCastTL.get_collider().is_in_group("Ninja"):
+				ninjaSpotted.emit()
+				guardState = GuardState.ATTACK
+		
+		# Top Right Rayast
+		rayCastTR.target_position = Vector2(CNA.global_position.x - global_position.x, CNA.global_position.y - global_position.y)
+		print(str(CNA.global_position))
+		if rayCastTR.is_colliding():
+			if rayCastTR.get_collider().is_in_group("Ninja"):
+				ninjaSpotted.emit()
+				guardState = GuardState.ATTACK
+		
+		# Bottom Left Rayast
+		rayCastBL.target_position = Vector2(CNA.global_position.x - global_position.x, CNA.global_position.y - global_position.y)
+		print(str(CNA.global_position))
+		if rayCastBL.is_colliding():
+			if rayCastBL.get_collider().is_in_group("Ninja"):
+				ninjaSpotted.emit()
+				guardState = GuardState.ATTACK
+		
+		# Bottom Right Rayast
+		rayCastBR.target_position = Vector2(CNA.global_position.x - global_position.x, CNA.global_position.y - global_position.y)
+		print(str(CNA.global_position))
+		if rayCastBR.is_colliding():
+			if rayCastBR.get_collider().is_in_group("Ninja"):
+				ninjaSpotted.emit()
+				guardState = GuardState.ATTACK
 	
 	if (guardState == GuardState.MOVE):
 		if (agent.is_navigation_finished()):
@@ -130,3 +128,6 @@ func _physics_process(delta):
 			animPlayer.play("GuardPokemon/WalkLeft")
 
 		move_and_slide()
+	
+	if (guardState == GuardState.ATTACK):
+		pass

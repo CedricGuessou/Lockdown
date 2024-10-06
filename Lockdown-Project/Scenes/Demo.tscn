@@ -1,7 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://bjjletiy18nv7"]
+[gd_scene load_steps=18 format=3 uid="uid://c2ypr7nqmt307"]
 
-[ext_resource type="Texture2D" uid="uid://ck2o6e4cy7nfo" path="res://images/Ninja_Full.png" id="2_4v3cs"]
-[ext_resource type="Script" path="res://CNAFightScript.gd" id="4_eku8a"]
+[ext_resource type="Script" path="res://Scripts/CameraController.cs" id="1_xjp7t"]
+[ext_resource type="PackedScene" uid="uid://dp0fjild2na6g" path="res://Scenes/first_level_map.tscn" id="2_e4nqp"]
+[ext_resource type="PackedScene" uid="uid://bqcqlw8tmgtlr" path="res://Scenes/GuardTestingChamber/GuardJDW1.tscn" id="6_328ki"]
+[ext_resource type="Script" path="res://Scripts/AlertButton.cs" id="7_3wqf2"]
+[ext_resource type="Script" path="res://Scenes/CyberNinjaDemo.gd" id="7_6g22h"]
+[ext_resource type="Texture2D" uid="uid://ck2o6e4cy7nfo" path="res://images/Ninja_Full.png" id="7_7lfir"]
+[ext_resource type="PackedScene" uid="uid://7yxp1x56oqs7" path="res://Scenes/GuardTestingChamber/GuardJDW2.tscn" id="7_xwyvj"]
+[ext_resource type="PackedScene" uid="uid://dyvyqomu7tswv" path="res://Scenes/GuardTestingChamber/GuardJDW3.tscn" id="8_s2evt"]
+[ext_resource type="AudioStream" uid="uid://d3xejiylq0ogb" path="res://Audio/Untitled song.mp3" id="9_rit6k"]
 
 [sub_resource type="Animation" id="Animation_fkrux"]
 resource_name = "CNA_Attack"
@@ -194,35 +201,72 @@ _data = {
 radius = 15.0
 height = 71.0
 
-[node name="CyberNinja" type="CharacterBody2D"]
-position = Vector2(1, -29)
+[node name="Demo" type="Node2D"]
+script = ExtResource("1_xjp7t")
 
-[node name="State Machine" type="Node2D" parent="."]
+[node name="FirstLevelMap" parent="." instance=ExtResource("2_e4nqp")]
+position = Vector2(-2175, -1170)
+scale = Vector2(3, 3)
 
-[node name="sneak" type="Node2D" parent="State Machine"]
+[node name="GuardJdw1" parent="." instance=ExtResource("6_328ki")]
+position = Vector2(-113, -68)
 
-[node name="fight" type="Node2D" parent="State Machine"]
-script = ExtResource("4_eku8a")
+[node name="GuardJdw" parent="." instance=ExtResource("7_xwyvj")]
+position = Vector2(-1970, -87)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="GuardJdw2" parent="." instance=ExtResource("8_s2evt")]
+position = Vector2(167, 96)
+
+[node name="MainCamera" type="Camera2D" parent="."]
+
+[node name="AlertButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2016.0
+offset_top = -737.0
+offset_right = -1876.0
+offset_bottom = -597.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.554957, 0.524489)
+pivot_offset = Vector2(70, 140)
+theme_override_font_sizes/font_size = 30
+text = "ALERT"
+script = ExtResource("7_3wqf2")
+
+[node name="CyberNinja" type="CharacterBody2D" parent="."]
+position = Vector2(-2020, -150)
+scale = Vector2(1.96934, 2.11759)
+script = ExtResource("7_6g22h")
+
+[node name="Sprite2D" type="Sprite2D" parent="CyberNinja"]
 scale = Vector2(0.05, 0.05)
-texture = ExtResource("2_4v3cs")
+texture = ExtResource("7_7lfir")
 hframes = 6
 vframes = 6
 frame = 28
 region_rect = Rect2(167.15, 16.2662, 13010, 11789.9)
 
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="CyberNinja"]
 path_postprocessing = 1
 avoidance_enabled = true
 radius = 101.65
 debug_enabled = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CyberNinja"]
 libraries = {
 "": SubResource("AnimationLibrary_rb4j2")
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CyberNinja"]
 position = Vector2(0, -1.5)
 shape = SubResource("CapsuleShape2D_xdscj")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_rit6k")
+autoplay = true
+
+[connection signal="pressed" from="AlertButton" to="AlertButton" method="_on_pressed"]
