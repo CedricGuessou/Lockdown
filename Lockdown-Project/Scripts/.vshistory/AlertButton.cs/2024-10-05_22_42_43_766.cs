@@ -22,6 +22,15 @@ public partial class AlertButton : Button
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		if (Input.IsActionJustPressed("slow_mo_test"))
+		{
+			Engine.TimeScale = 0.5;
+		}
+		else if(Input.IsActionJustReleased("slow_mo_test"))
+		{
+			Engine.TimeScale = 1;
+		}
+		
 		Vector2 zoom;
 		zoom = camera.Zoom;
 		Scale = new Vector2(1 / zoom.X, 1 / zoom.Y);

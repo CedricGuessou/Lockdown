@@ -5,7 +5,6 @@ using System.Security.Cryptography;
 public partial class CameraController : Node2D
 {
 	private Camera2D _cam;
-	[Export] Label label;
 
 	private const float zoomInScale = 1.1f; // Amount the camera scales in with a single "click" of a mouse scroll
 	private const float zoomOutScale = .9f; // Amount the camera scales out with a single "click" of a mouse scroll
@@ -29,7 +28,6 @@ public partial class CameraController : Node2D
 		Zoom(delta);
 		SimplePan(delta);
 		ClickAndDrag();
-		SlowMo();
 	}
 
 	/// <summary>
@@ -43,18 +41,17 @@ public partial class CameraController : Node2D
 		{
 			zoomVec.X *= zoomInScale;
 			zoomVec.Y *= zoomInScale;
-            label.Scale = Vector2.One / _cam.Zoom;
-        }
 
-        // Zoom out
-        if (Input.IsActionJustPressed("camera_zoom_out"))
+		}
+
+		// Zoom out
+		if(Input.IsActionJustPressed("camera_zoom_out"))
 		{
 			zoomVec.X *= zoomOutScale;
 			zoomVec.Y *= zoomOutScale;
-			label.Scale = Vector2.One / _cam.Zoom;
 		}
 
-        _cam.Zoom =_cam.Zoom.Slerp(zoomVec, slerpSpeed * (float)delta); // Slerps zoom (just a smoothing thing, delta is there for consistency)
+		_cam.Zoom =_cam.Zoom.Slerp(zoomVec, slerpSpeed * (float)delta); // Slerps zoom (just a smoothing thing, delta is there for consistency)
 	}
 
 	/// <summary>
@@ -116,22 +113,6 @@ public partial class CameraController : Node2D
 			_cam.Position = dragStartCameraPos - moveVector * 1/_cam.Zoom.X;
 		}
 	}
-
-	void SlowMo()
-	{
-        if (Input.IsActionJustReleased("SlowMo") && Engine.TimeScale == 1)
-        {
-            Engine.TimeScale = 0.3;
-			GD.Print("slow");
-			
-        }
-        else if(Input.IsActionJustReleased("SlowMo"))
-        {
-            Engine.TimeScale = 1;
-			GD.Print("Normal");
-        }
-
-    }
 
 
 }

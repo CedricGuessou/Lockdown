@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bjjletiy18nv7"]
 
-[ext_resource type="Script" path="res://NinjaScript.gd" id="1_a3lum"]
-[ext_resource type="Script" path="res://StateMachine.gd" id="1_tm745"]
-[ext_resource type="Script" path="res://CNASneakScript.gd" id="2_iay44"]
+[ext_resource type="Script" path="res://Scripts/NinjaScript.gd" id="1_a3lum"]
+[ext_resource type="Script" path="res://Scripts/StateMachine.gd" id="1_tm745"]
+[ext_resource type="Script" path="res://Scripts/CNASneakScript.gd" id="2_iay44"]
 [ext_resource type="Texture2D" uid="uid://bswywu8dp1u2r" path="res://icon.svg" id="4_6uxia"]
 
 [node name="CyberNinja" type="CharacterBody2D"]

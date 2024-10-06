@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bynt6whjvcg8"]
+[gd_scene load_steps=6 format=3 uid="uid://cglavuw12ensc"]
 
 [ext_resource type="Script" path="res://Scripts/CameraController.cs" id="1_wosxh"]
 [ext_resource type="Texture2D" uid="uid://bswywu8dp1u2r" path="res://icon.svg" id="2_7hmit"]
@@ -11,8 +11,10 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 1153, 2, 1151, 648, -5, 648)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 
-[node name="GuardTestingEnvironment" type="Node2D"]
+[node name="GuardTestingEnvironment" type="Node2D" node_paths=PackedStringArray("label")]
+scale = Vector2(1.115, 1.115)
 script = ExtResource("1_wosxh")
+label = NodePath("MainCamera/Label")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(2945, 1459)
@@ -26,6 +28,15 @@ navigation_polygon = SubResource("NavigationPolygon_1qhsg")
 
 [node name="MainCamera" type="Camera2D" parent="."]
 position = Vector2(600, 981)
+
+[node name="Label" type="Label" parent="MainCamera"]
+visible = false
+offset_left = -180.269
+offset_top = -278.758
+offset_right = 102.731
+offset_bottom = -193.758
+theme_override_font_sizes/font_size = 66
+text = "asdasd"
 
 [node name="GuardJdw" parent="." instance=ExtResource("3_y82ir")]
 position = Vector2(553, 1018)
