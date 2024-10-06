@@ -13,7 +13,7 @@ public partial class GuardJDW : CharacterBody2D
 
 	private AnimationPlayer animPlayer;
 
-	GuardState guardState = GuardState.IDLE;
+	GuardState guardState = GuardState.MOVE;
 
 	private enum GuardState
 	{

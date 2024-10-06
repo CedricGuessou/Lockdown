@@ -1,8 +1,36 @@
-[gd_scene load_steps=2 format=3 uid="uid://dy6xg40bu3ekp"]
+[gd_scene load_steps=6 format=3 uid="uid://dy6xg40bu3ekp"]
 
 [ext_resource type="PackedScene" uid="uid://vkkhqmusugj" path="res://Scenes/guard.tscn" id="1_6hkua"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gnwb8"]
+bg_color = Color(1, 0.192157, 0.196078, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0fygs"]
+bg_color = Color(1, 0, 0.0627451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bkwwy"]
+bg_color = Color(0.932625, 0.932625, 0.932625, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d1o4s"]
+bg_color = Color(0.460995, 0.460995, 0.460995, 1)
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(98, 93)
 
 [node name="Guard" parent="." instance=ExtResource("1_6hkua")]
+
+[node name="AlertButton" type="Button" parent="."]
+offset_left = 900.0
+offset_top = 400.0
+offset_right = 1040.0
+offset_bottom = 540.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_gnwb8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0fygs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bkwwy")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_d1o4s")
+disabled = true
+action_mode = 0
+text = "ALERT"
