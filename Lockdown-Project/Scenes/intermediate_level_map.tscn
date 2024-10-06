@@ -1,9 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://csj6vpofjnxfv"]
+[gd_scene load_steps=8 format=3 uid="uid://e2kqunxnwpt"]
 
-[ext_resource type="Texture2D" uid="uid://dabq1blp8sem7" path="res://floor.png" id="1_i4321"]
-[ext_resource type="Texture2D" uid="uid://dqhlougvfj6yp" path="res://wall.png" id="2_wn4fl"]
-[ext_resource type="Texture2D" uid="uid://c57p1uvrs43pe" path="res://grass-menu.jpg" id="3_pk5yk"]
-[ext_resource type="Texture2D" uid="uid://co13b1hf4rfib" path="res://pngtree-wooden-door-png-image_6093732.png" id="4_p61ih"]
+[ext_resource type="Texture2D" uid="uid://cuxu5557ddh1a" path="res://images/SmallerFloor.png" id="1_i4321"]
+[ext_resource type="Texture2D" uid="uid://covkpbj0mpsix" path="res://images/TileSmaller.png" id="2_wn4fl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g3hua"]
 texture = ExtResource("1_i4321")
@@ -7184,7 +7182,6 @@ texture = ExtResource("2_wn4fl")
 55:27/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6xy1r"]
-texture = ExtResource("3_pk5yk")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -31307,7 +31304,6 @@ texture = ExtResource("3_pk5yk")
 119:66/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vyl1s"]
-texture = ExtResource("4_p61ih")
 7:3/0 = 0
 7:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 7:3/0/physics_layer_0/angular_velocity = 0.0
