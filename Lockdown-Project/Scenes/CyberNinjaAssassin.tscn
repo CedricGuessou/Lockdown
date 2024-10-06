@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bjjletiy18nv7"]
+[gd_scene load_steps=11 format=3 uid="uid://bjjletiy18nv7"]
 
 [ext_resource type="Texture2D" uid="uid://ck2o6e4cy7nfo" path="res://images/Ninja_Full.png" id="2_4v3cs"]
 [ext_resource type="Script" path="res://CNAFightScript.gd" id="4_eku8a"]
@@ -16,6 +16,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [Vector2i(2, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [28]
 }
 
 [sub_resource type="Animation" id="Animation_wf313"]
@@ -138,8 +150,39 @@ tracks/1/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_fkrux"]
+resource_name = "CNA_Attack"
+length = 1.2
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [27, 28, 29, 33, 34, 35]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rb4j2"]
 _data = {
+"CNA_Attack": SubResource("Animation_fkrux"),
 "CNA_Walk_Down": SubResource("Animation_6pikq"),
 "CNA_Walk_Left": SubResource("Animation_kh7kw"),
 "CNA_Walk_Right": SubResource("Animation_wf313"),
@@ -166,7 +209,7 @@ scale = Vector2(0.05, 0.05)
 texture = ExtResource("2_4v3cs")
 hframes = 6
 vframes = 6
-frame = 2
+frame = 28
 region_rect = Rect2(167.15, 16.2662, 13010, 11789.9)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
