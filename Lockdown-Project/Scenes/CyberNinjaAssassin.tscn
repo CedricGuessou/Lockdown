@@ -1,7 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://bjjletiy18nv7"]
+[gd_scene load_steps=12 format=3 uid="uid://bjjletiy18nv7"]
 
 [ext_resource type="Texture2D" uid="uid://ck2o6e4cy7nfo" path="res://images/Ninja_Full.png" id="2_4v3cs"]
-[ext_resource type="Script" path="res://CNAFightScript.gd" id="4_eku8a"]
+[ext_resource type="Script" path="res://Scripts/CNAFightScript.gd" id="4_eku8a"]
 
 [sub_resource type="Animation" id="Animation_fkrux"]
 resource_name = "CNA_Attack"
@@ -191,8 +191,10 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xdscj"]
-radius = 15.0
-height = 71.0
+radius = 18.0
+height = 77.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q1lr0"]
 
 [node name="CyberNinja" type="CharacterBody2D"]
 position = Vector2(1, -29)
@@ -226,3 +228,9 @@ libraries = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1.5)
 shape = SubResource("CapsuleShape2D_xdscj")
+
+[node name="Sight Area" type="Area2D" parent="."]
+scale = Vector2(50, 50)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sight Area"]
+shape = SubResource("CircleShape2D_q1lr0")

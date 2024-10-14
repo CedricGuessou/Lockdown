@@ -26,7 +26,8 @@ func _ready():
 ## Update the State on the process tick	
 func _process(delta):
 	if currentState:
-		currentState.update(delta)	
+		currentState.update(delta)
+	#TODO: if stamina is below 25 and current state is fight, transition to the run state
 
 ##Update the state on the physics tick
 func _physics_process(delta):

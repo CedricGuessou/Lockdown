@@ -1,6 +1,8 @@
 extends State
 class_name CNASneak
 
+#give it a variable for the ninja's body
+
 func enter() -> void:
 	get_node("../../").goalReached.connect(goal_reached)
 	#replace the mouse position with a function to locate the goal node's global position
