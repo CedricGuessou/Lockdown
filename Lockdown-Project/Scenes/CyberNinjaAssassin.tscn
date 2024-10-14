@@ -1,6 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://bjjletiy18nv7"]
+[gd_scene load_steps=15 format=3 uid="uid://bjjletiy18nv7"]
 
+[ext_resource type="Script" path="res://Scripts/NinjaScript.gd" id="1_fas7s"]
+[ext_resource type="Script" path="res://Scripts/StateMachine.gd" id="2_2m5fi"]
 [ext_resource type="Texture2D" uid="uid://ck2o6e4cy7nfo" path="res://images/Ninja_Full.png" id="2_4v3cs"]
+[ext_resource type="Script" path="res://Scripts/CNASneakScript.gd" id="3_y0rxd"]
 [ext_resource type="Script" path="res://Scripts/CNAFightScript.gd" id="4_eku8a"]
 
 [sub_resource type="Animation" id="Animation_fkrux"]
@@ -198,10 +201,13 @@ height = 77.0
 
 [node name="CyberNinja" type="CharacterBody2D"]
 position = Vector2(1, -29)
+script = ExtResource("1_fas7s")
 
 [node name="State Machine" type="Node2D" parent="."]
+script = ExtResource("2_2m5fi")
 
 [node name="sneak" type="Node2D" parent="State Machine"]
+script = ExtResource("3_y0rxd")
 
 [node name="fight" type="Node2D" parent="State Machine"]
 script = ExtResource("4_eku8a")
@@ -234,3 +240,6 @@ scale = Vector2(50, 50)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sight Area"]
 shape = SubResource("CircleShape2D_q1lr0")
+
+[connection signal="body_entered" from="Sight Area" to="." method="_on_sight_area_body_entered"]
+[connection signal="body_exited" from="Sight Area" to="." method="_on_sight_area_body_exited"]
