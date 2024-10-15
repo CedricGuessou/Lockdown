@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://buqkqqstwwr3b"]
+
+[ext_resource type="PackedScene" uid="uid://dp0fjild2na6g" path="res://Scenes/first_level_map.tscn" id="1_g73nu"]
+[ext_resource type="PackedScene" uid="uid://bjjletiy18nv7" path="res://Scenes/CyberNinjaAssassin.tscn" id="2_ons52"]
+[ext_resource type="PackedScene" uid="uid://bqcqlw8tmgtlr" path="res://Scenes/GuardTestingChamber/GuardJDW1.tscn" id="3_j6dgv"]
+[ext_resource type="PackedScene" uid="uid://7yxp1x56oqs7" path="res://Scenes/GuardTestingChamber/GuardJDW2.tscn" id="4_6dnfy"]
+
+[node name="NinjaTest" type="Node2D"]
+
+[node name="FirstLevelMap" parent="." instance=ExtResource("1_g73nu")]
+position = Vector2(-6.10352e-05, 0)
+scale = Vector2(0.219528, 0.260052)
+
+[node name="CyberNinja" parent="." instance=ExtResource("2_ons52")]
+position = Vector2(1023, 112)
+
+[node name="GuardJdw1" parent="." instance=ExtResource("3_j6dgv")]
+position = Vector2(527, 211)
+scale = Vector2(0.476344, 0.476344)
+
+[node name="GuardJdw" parent="." instance=ExtResource("4_6dnfy")]
+position = Vector2(50, 230)
+scale = Vector2(0.521833, 0.521833)
