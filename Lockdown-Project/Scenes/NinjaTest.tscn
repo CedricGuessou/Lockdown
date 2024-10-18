@@ -9,15 +9,16 @@
 
 [node name="FirstLevelMap" parent="." instance=ExtResource("1_g73nu")]
 position = Vector2(-6.10352e-05, 0)
-scale = Vector2(0.219528, 0.260052)
+scale = Vector2(0.219472, 0.259924)
 
 [node name="CyberNinja" parent="." instance=ExtResource("2_ons52")]
-position = Vector2(1023, 112)
+position = Vector2(1029, 78)
+scale = Vector2(0.680006, 0.680006)
 
 [node name="GuardJdw1" parent="." instance=ExtResource("3_j6dgv")]
-position = Vector2(527, 211)
-scale = Vector2(0.476344, 0.476344)
+position = Vector2(42, 226)
+scale = Vector2(0.556346, 0.556346)
 
 [node name="GuardJdw" parent="." instance=ExtResource("4_6dnfy")]
-position = Vector2(50, 230)
-scale = Vector2(0.521833, 0.521833)
+position = Vector2(53, 596)
+scale = Vector2(0.52, 0.52)

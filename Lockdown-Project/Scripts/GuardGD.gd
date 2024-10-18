@@ -71,7 +71,8 @@ func selectedF():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	print(name + " " + str(guardState))
+	#sorry fells, but I disabled this because it's clogging up my console when I try to test your guards
+	#print(name + " " + str(guardState))
 	if CNA:
 		# Top Left Rayast
 		rayCastTL.target_position = Vector2(CNA.global_position.x - global_position.x, CNA.global_position.y - global_position.y)

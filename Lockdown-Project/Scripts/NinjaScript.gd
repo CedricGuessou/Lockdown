@@ -23,11 +23,13 @@ var stateMachine = StateMachine.new()
 
 signal goalReached()
 
-signal ninjaSpotted()
+signal guardSpotted()
 
 var direction = Vector3()
+#var readyToNavigate : bool = false
 
 func _ready():
+	#wait for one physics frame before starting the physics process
 	set_physics_process(false)
 	await get_tree().physics_frame
 	set_physics_process(true)
@@ -35,6 +37,7 @@ func _ready():
 	stateMachine = get_node("State Machine")
 	animationPlayer = get_node("AnimationPlayer")
 	ninjaSprite = get_node("Sprite2D")
+	#readyToNavigate = true
 	#somehow detect it every time the goal changes?
 	navigationAgent.target_position = get_node("State Machine").currentState.goalCoords
 	direction = navigationAgent.get_next_path_position() - global_position
@@ -52,15 +55,13 @@ func _physics_process(delta):
 	var raycastParams = PhysicsRayQueryParameters2D.new()
 	for guard in guardsInRange:
 		#raycast from the ninja to the guard on the ninja's collision layer
-		#NOTE: should this be global position? I don't really get how that works...
 		raycastParams.from = position
 		raycastParams.to = guard.position
 		raycastParams.exclude = [self]
 		raycastParams.collision_mask = collision_mask
 		var sightCheck = spaceState.intersect_ray(raycastParams)
 		#if the first thing the ray hits is the targeted guard, then add that guard to the list of guards in sight, if he isn't already in there
-		#NOTE: If this code is being jank, this may be the culprit LOOK HERE FOR JANK
-		if sightCheck && sightCheck.collider_id == guard.ObjectID:
+		if sightCheck && sightCheck["collider"] == guard:
 			if !(guard in guardsInSight):
 				guardsInSight.append(guard)
 		#if the LOS check fails and the guard was previously in sight, remove him
@@ -82,6 +83,7 @@ func _physics_process(delta):
 	directionUpdateTimer = directionUpdateTimer + delta
 	navigationAgent.target_position = stateMachine.currentState.goalCoords
 	#gets the next path position every frame so he doesn't switch pathing
+	#if readyToNavigate:
 	navigationAgent.get_next_path_position()
 	#but only changes direction every 0.2 seconds to help keep him from dancing between pathfinding points
 	if directionUpdateTimer > 0.2 && !navigationAgent.is_navigation_finished():
@@ -95,11 +97,9 @@ func _physics_process(delta):
 		#if direction[0] > direction[1]:
 		#TODO: fix this with code copied from ninjatest. It just doesn't work right now
 		if direction[0] > 0:
-			ninjaSprite.scale.x = abs(ninjaSprite.scale.x)
-			animationPlayer.play("CNA_Walk_Side")
+			animationPlayer.play("CNA_Walk_Right")
 		else:
-			ninjaSprite.scale.x = -(ninjaSprite.scale.x)
-			animationPlayer.play("CNA_Walk_Side")
+			animationPlayer.play("CNA_Walk_Left")
 		velocity = direction * walkSpeed
 		move_and_slide()
 	if ninjaCurrentAction == "RUN":
@@ -111,17 +111,16 @@ func _physics_process(delta):
 			velocity = direction * runSpeed
 			move_and_slide()
 
-#some quick bs to test the attack thing
-var timer = 0
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	timer += 1
-	if timer == 180:
+	#if there's a guard within your LOS
+	if guardsInSight.size() > 0:
 		print("NINJA!!!")
-		emit_signal("ninjaSpotted")
+		#emit a signal to switch to the attack state and kill them
+		emit_signal("guardSpotted")
 		print("current state is now " + str(stateMachine.currentState))
 	ninjaCurrentAction = stateMachine.currentState.desiredAction
-	#TODO: get this to only emit once per pathfinding process. Otherwise it messes with animations
+	#TODO: get this to only emit once per pathfinding process. Otherwise I think it might mess with animations?
 	if navigationAgent.is_navigation_finished():
 		emit_signal("goalReached")
 

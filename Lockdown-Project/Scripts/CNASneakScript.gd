@@ -4,13 +4,13 @@ class_name CNASneak
 #give it a variable for the ninja's body
 
 func enter() -> void:
-	get_node("../../").goalReached.connect(goal_reached)
+	ninjaBody.goalReached.connect(goal_reached)
 	#replace the mouse position with a function to locate the goal node's global position
 	goalCoords = get_global_mouse_position()
 	desiredAction = "WALK"
 	#connect to a signal to tell you if you've been spotted
 	#this should come from a guard, but for now it comes from the ninja's body
-	get_node("../../").ninjaSpotted.connect(ninja_spotted)
+	ninjaBody.guardSpotted.connect(guard_spotted)
 
 func goal_reached() -> void:
 	if self == get_node("../").currentState:
@@ -30,7 +30,7 @@ func goal_reached() -> void:
 	#if you see a camera or a guard vision cone:
 		#pick a new path to avoid the vision area
 		
-func ninja_spotted() -> void:
+func guard_spotted() -> void:
 	transition.emit(self, "fight")
 
 func physics_update(delta: float) -> void:
